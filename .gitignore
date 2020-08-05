@@ -1,0 +1,15 @@
+/system/config/access.config.inc.php
+# /system/config/client_credentials_google.json
+/system/model/access.config.inc.php
+/logs
+/node_modules
+/downloaded
+/css/maps
+/.idea/
+/.vscode/
+*.log
+*.bak
+*.vscode
+conts_init.php
+test*.php
+.DS_Store

@@ -1,0 +1,22 @@
+<?php if (!is_null($head)) include($head); ?>
+<div class="wrapper">
+	<?php
+	include($header);
+	include($mainmenu);
+?>
+	
+	<div class="content-wrapper">
+		<div class="content">
+			<div class="container-fluid main-site-wrapper">
+				<?php if (!is_null($vista)) include($vista); ?>
+			</div>
+		</div>
+	</div>
+	<!-- </main> -->
+	<footer class="main-footer">
+		<?php if (!is_null($footer)) include($footer); ?>
+	</footer>
+
+	
+
+</div><!-- wrapper -->

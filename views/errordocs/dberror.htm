@@ -1,0 +1,52 @@
+<?php
+/*
+	Esto avisa que hubo problemas al conectar con la base de datos desde index.php
+*/
+header("Content-type: text/html; charset=UTF-8"); // Esto es porque llegado acá, todavía no se le ha indicado al navegador que la codificación es UTF-8
+cLogging::Write('index.php Error en la base de datos: '.$objeto_db->errmsg);
+?>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="Author" content="FiveMedia" />
+<meta name="AuthorLink" content="http://www.fivemedia.com.ar/" />
+<title>Error DB</title>
+<style type="text/css">
+* {
+margin: 0;padding: 0;
+}
+html, body {
+	font-family: 'Arial','Helvetica',sans-serif;
+}
+h1 {
+	font-size: 14pt;
+}
+p {
+	font-size: 12pt;
+}
+h1, p {
+	text-align: center;
+}
+h1 {
+	margin-top: 1em;
+}
+p {
+	margin: 1em;
+}
+</style>
+</head>
+<body>
+<h1>Estamos experimentando problemas con nuestro sitio web.</h1>
+<p>Momentaneamente no es posible mostrarle el contenido solicitado. Por favor intente más tarde.</p>
+<p>Disculpe las molestias ocasionadas.</p>
+<?php
+if (DEVELOPE) {
+?>
+<div style="margin:1em auto; padding:1em; border:1px solid #3333;background-color:#eeeeee;width:95%;">
+<p style="color:#333;"><?php echo $objeto_db->ShowLastError(); ?></p>
+</div>
+<?php
+}
+?>
+</body>
+</html>

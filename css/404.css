@@ -1,0 +1,152 @@
+:root {
+	--background--main--bg: white;
+	--font--helvetica: helvetica;
+	--font-cormorant: cormorant;
+	--font-opensans: opensans;
+  
+  
+  }
+  
+  
+  /**********
+  FONTS
+  **********/
+  @font-face{
+	font-family: helvetica;
+	src: url("../fonts/HelveticaNeue.ttc");
+  }
+  @font-face{
+	font-family: helvetica;
+	src: url("../fonts/HelveticaNeueLTStd-Bd.otf")
+  }
+  @font-face{
+	font-family: cormorant;
+	src: url("../fonts/Cormorant-Regular.ttf");
+  }
+  @font-face{
+	font-family: cormorant;
+	src: url("../fonts/CormorantGaramond-BoldItalic.ttf");
+  }
+  @font-face{
+	font-family: cormorant;
+	src: url("../fonts/CormorantGaramond-Italic.ttf");
+  }
+  @font-face{
+	font-family: cormorant;
+	src: url("../fonts/CormorantGaramond-LightItalic.ttf");
+  }
+  @font-face{
+	font-family: cormorant;
+	src: url("../fonts/CormorantGaramond-Regular.ttf");
+  }
+  @font-face{
+	font-family: cormorant;
+	src: url("../fonts/CormorantGaramond-SemiBoldItalic.ttf");
+  }
+  @font-face{
+	font-family: opensans;
+	src: url("../fonts/OpenSans-Bold.ttf");
+  }
+  @font-face{
+	font-family: opensans;
+	src: url("../fonts/OpenSans-Light.ttf");
+  }
+  @font-face{
+	font-family: opensans;
+	src: url("../fonts/OpenSans-Regular.ttf");
+  }
+  @font-face{
+	font-family: opensans;
+	src: url("../fonts/OpenSans-SemiBold.ttf");
+  }
+  
+  
+  
+  
+  
+  * {
+	font-family: var(--font-opensans);
+  }
+  
+  html {
+	scroll-behavior: smooth;
+  }
+  
+  .main-site-wrapper {
+	overflow: hidden;
+  }
+  
+  
+  
+  /**********
+	BASE
+  **********/
+  a {
+	color: black;
+	transition: text-shadow .3s;
+  }
+  a:hover {
+	color: grey;
+	font-weight: bolder;
+	transition: color .3s ease;
+	
+  }
+  a:hover, a:hover:visited {
+	color: #5ed1ef;
+	text-decoration: none !important;
+  }
+  
+  ul,
+  li {
+	list-style: none !important;
+	padding: 0 !important;
+	margin: 0 !important;
+  }
+  
+  /**********
+  TITLES
+  **********/
+  h1 {
+	font-family: var(--font--helvetica), Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: normal;
+	font-weight: 600
+  }
+  
+  h2,
+  h3,
+  h4,
+  h5 {
+	font-family: var(--font--helvetica), Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: normal;
+  }
+  
+  p {
+	font-family: var(--font--helvetica);
+	font-style: italic;
+  }
+  
+  
+  
+  /**********
+	SECTION
+  **********/
+  section {
+	padding-top: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 90vh;
+	background-repeat: no-repeat;
+	background-position: center;
+  }
+  
+  
+  /* ***********
+	  Navbar navegacion
+	************* */
+	#NavMenu{
+	  background-color: var(--background--main--bg);
+	}
+	#mainNav .loGoo{
+	  width: 100px;
+	}

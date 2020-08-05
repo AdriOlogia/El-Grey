@@ -1,0 +1,25 @@
+#footer {
+  background-color: $darkBlue;
+  padding: 10px 50px;
+
+  @media (min-width: $mdBreakpoint) {
+    padding: 20px 100px;
+  }
+
+  * {
+    color: white !important;
+  }
+
+  p {
+    font-size: 15px !important;
+  }
+
+  img {
+    height: 50px !important;
+    width: auto;
+  }
+
+  ul li {
+    font-size: 10px;
+  }
+}

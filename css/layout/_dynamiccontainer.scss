@@ -1,0 +1,15 @@
+  //******* CONTAINER DINAMIC @ PRODUCTS AND SERVICES PAGES ******//
+  #container-dynamic-content {
+    width: 100%;
+    height: fit-content !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 170px;
+
+    @media (min-width:$lgBreakpoint) {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }

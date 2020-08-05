@@ -1,0 +1,76 @@
+#lista-mensajes-usuario {
+	max-height: 75vh;
+	overflow-y: scroll;
+}
+.opacity-0 {
+  opacity:0!important;
+}
+.opacity-1 {
+  opacity:0.2!important;
+}
+.opacity-2 {
+  opacity:0.4!important;
+}
+.opacity-3 {
+  opacity:0.6!important;
+}
+.opacity-4 {
+  opacity:.8!important;
+}
+.opacity-5 {
+  opacity:1!important;
+}
+
+/* Maybe even support hover opacity shifts */
+.opacity-0h5 {
+  opacity:0!important;
+  transition: opacity .25s ease-in-out!important;
+  -moz-transition: opacity .25s ease-in-out!important;
+  -webkit-transition: opacity .25s ease-in-out!important;
+}
+.opacity-0h5:hover {
+  opacity:1!important;
+}
+.opacity-2h5 {
+  opacity:0.4!important;
+  transition: opacity .25s ease-in-out!important;
+  -moz-transition: opacity .25s ease-in-out!important;
+  -webkit-transition: opacity .25s ease-in-out!important;
+}
+.opacity-2h5:hover {
+  opacity:1!important;
+}
+.fs {
+	font-size: normal;
+}
+.fs-0 {
+	font-size: 0.25rem;
+}
+.fs-1 {
+	font-size: 0.5rem;
+}
+.fs-2 {
+	font-size: 0.75rem;
+}
+.fs-3 {
+	font-size: 1rem;
+}
+.fs-4 {
+	font-size: 1.25rem;
+}
+.fs-5 {
+	font-size: 1.5rem;
+}
+.fs-6 {
+	font-size: 1.9rem;
+}
+input.input-appended {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	
+}
+input.input-prepended {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	margin-left: -1px;
+}

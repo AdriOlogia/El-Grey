@@ -1,0 +1,88 @@
+FormSend ver 1.1
+
+	Plugin JQuery para enviar formularios (incluyendo formularios con el input type=file!) a través de una petición Ajax y no solo recibir el resultado sino además medir el progreso del envío.
+
+	Creado por: Fivemedia.
+	Desarrollado por: DriverOp
+	Página web: www.fivemedia.com.ar
+	
+	Fecha Creación: 2019-09-23
+	Última modificación: 2019-10-20
+
+
+Sintáxis básica:
+
+	$(form).fmdFormSend();
+
+	Esto envía el formulario HTML apuntado por 'form', que puede ser el objeto DOM o un selector JQuery. Sin parámetros fmdFormSend lo enviará a 'localhost' con método POST.
+	Para recibir el resultado, se debe enganchar una función al evento onFinish así:
+	
+	$(form).fmdFormSend({
+		onFinish: function (a,b,c,d) {
+			console.log(c);
+		}
+	});
+	
+	Donde el parámetro 'a' contiene el código de status HTTP (ver https://en.wikipedia.org/wiki/List_of_HTTP_status_codes). 'b' contiene la descripción textual del status HTTP (proporcionada por el servidor). 'c' contiene el cuerpo de la respuesta en formato textual. Y 'd' el cuerpo de la respuesta en formato XML.
+	
+	Para indicar la URL hacia dónde hacer la petición se le debe dar valor a la opción 'url':
+	
+	$(form).fmdFormSend({
+		url: 'http://example.com/someuri/',
+		onFinish: function (a,b,c,d) {
+			console.log(c);
+		}
+	});
+
+Opciones:
+
+	Esta es la lista de opciones disponibles:
+	
+	'url': La dirección hacia dónde hacer la petición Ajax. Por omisión 'localhost'.
+	'method': El tipo de petición a hacer, por omisió 'POST'.
+	'extraData': Objeto donde se pueden especificar otros datos a enviar al servidor además de los elementos del formulario que se está enviando. Por omisión ninguno.
+	'extraHeaders': Objeto donde pueden especificar otros campos en el header request del cliente hacia el servidor. Por omisión ninguno.
+	'onStart': Evento que se dispara cuando la petición comienza a prepararse. Antes de ejecutarse la petición. Recibe un solo parámetro que es una referencia al formulario actual que se va a enviar.
+	'onProgress': Evento que se dispara cuando se ha enviado un pedazo de los datos al formulario. Recibe tres parámetros. El primero es la cantidad de bytes enviados hasta ahora, el segundo es el total de bytes que se envian al servidor y el tercero es un porcentaje de lo ya enviado.
+	'onFinish': Evento que se dispara cuando se recibe la respuesta del servidor. Recibe cuatro parámetros. El primero es el código de status HTTP (número). El segundo es la descripción textual de ese estado. El tercero es el cuerpo de la respuesta del servidor en formato textual. Y el cuarto es la respuesta del servidor en formato XML.
+	
+Ejemplo:
+
+	<form name="frm" id="frm" class="formulario">
+		<input type="text" name="sometext" />
+		<input type="checkbox" name="somecheckbox" value="YES" />
+		<input type="file" name="somefile" />
+		<button type="button" onClick="SendThisForm();"></button>
+	</form>
+	
+	<script type="text/javascript">
+		var miProgres = function(loaded, total, porc) {
+			console.log('Loaded sofar: '+loaded+' of '+total+' '+porc+'%');
+		}
+
+		var miFinish = function(a,b,c,d) {
+			console.log('Server says:');
+			console.log('My HTTP Status is: '+a+' '+b);
+			console.log('My response is: '+c);
+		}
+
+		var myStart = function() {
+			console.log('An Ajax Request has started.');
+		}
+
+		function SendThisForm() {
+			$("form#frm").fmdFormSend({
+				url: 'IGetWhateverYouSendMe.php',
+				onStart: myStart,
+				onProgress: myProgress,
+				onFinish: myFinish,
+				extraData: {
+					someextrafield: 'cooksomecookies',
+					anotherfield: 'please'
+				}
+			});
+		}
+	</script>
+
+
+	

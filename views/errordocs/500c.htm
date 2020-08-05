@@ -1,0 +1,65 @@
+<?php
+/*
+	Esto puede ser un legítimo error 500, lo cual es altamente improbable...
+	O puede ser un error fabricado desde index.php cuando algo ha salido mal.
+*/
+header($_SERVER['SERVER_PROTOCOL'].' 500 Internal server error');
+header("Content-type: text/html; charset=UTF-8");
+
+cLogging::Write(__FILE__.' Metida de pata...');
+?>
+<html>
+
+<head>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		html,
+		body {
+			font-family: 'Arial', 'Helvetica', sans-serif;
+		}
+
+		h1,
+		p {
+			text-align: center;
+		}
+
+		h1 {
+			margin-top: 1em;
+		}
+
+		p {
+			margin: 1em;
+		}
+
+		div#message {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="message">
+		<h1>Error HTTP 500</h1>
+		<p>Error interno del servidor.</p>
+		<p>...</p>
+		<?php
+	if (DEVELOPE and isset($msgerr)) {
+?>
+		<div
+			style="background-color: red;color: white;font-size: 35px;text-align: center;padding: 10px 0;width: 95%;margin:auto;">
+			<?php echo $msgerr; ?>
+		</div>
+		<?php
+	}
+?>
+	</div>
+</body>
+
+</html>

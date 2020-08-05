@@ -1,0 +1,81 @@
+/*******************************
+    SERVICES SECTION
+********************************/
+#services {
+  overflow: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+  vertical-align: bottom;
+  height: fit-content;
+
+  h3 {
+    text-transform: none !important;
+  }
+
+  @media (min-width: $mdBreakpoint) {
+    max-height: 100vh;
+  }
+
+  .is-hidden {
+    display: none !important;
+  }
+
+  .active-item {
+    border-bottom: 2px solid $darkBlue;
+  }
+
+  #digital-transformation {
+
+    @media (min-width: $mdBreakpoint) {
+      padding: 0 250px;
+    }
+  }
+
+
+  #digital-transformation,
+  #cto-services,
+  #data-modernization,
+  #cloud-service-integration-support,
+  #biometric-solutions,
+  #app-developments {
+    background-image: url("../imgs/bkgs/bkg_services.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top right;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 60px;
+    width: 100%;
+
+    @media (min-width: $mdBreakpoint) {
+      min-height: 500px;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    div {
+      @media (min-width: $lgBreakpoint) {
+        width: 60%;
+      }
+    }
+  }
+
+  #cto-services,
+  #data-modernization,
+  #cloud-service-integration-support,
+  #biometric-solutions,
+  #app-developments {
+    padding-top: 170px;
+
+    @media (min-width: $mdBreakpoint) {
+      padding-top: 170px;
+      padding-left: 70px;
+      height: 100vh;
+    }
+
+    @media (min-width: $lgBreakpoint) {
+      padding: 170px 250px;
+    }
+  }
+
+}

@@ -1,0 +1,45 @@
+/*************
+LOGOS
+*************/
+
+/* company logo @ mainNav*/
+.logoOmbu {
+  max-width: 300px;
+}
+
+
+/* social network logos @ mainNav */
+.social-network {
+  display: flex;
+  flex-direction: row;
+
+  @media (min-width: $mdBreakpoint) {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: fixed;
+    height: 300px;
+    top: calc(50% - 200px);
+
+  }
+
+  // not a bootstrap breakpoint
+  @media (max-width:400px) {
+    display: none;
+  }
+}
+
+.logo-redes {
+  max-width: 70px;
+  padding: 20px;
+  
+
+  @media (min-width: $mdBreakpoint) {
+    margin: 0 !important;
+
+  }
+
+  @media (max-width: 455px) {
+    margin: 0 -10px !important;
+  }
+}

@@ -1,0 +1,40 @@
+// *** IN PAGE MENU SECTIONS SERVICES PRODUCTS*** //
+#in-page-menu {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 100px;
+  width: 100%;
+  background-color: #f5f8fb !important;
+  padding: 10px 0;
+
+  ul {
+    padding: 0 !important;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+    @media (min-width: $mdBreakpoint) {
+      justify-content: space-around;
+      width: 80%;
+    }
+
+
+    li {
+      font-size: 10px;
+      word-wrap: none;
+
+      @media (min-width: $mdBreakpoint) {
+        font-size: 13px;
+        padding: 0 10px !important;
+      }
+
+      a {
+        color: $darkBlue;
+        font-weight: bold;
+      }
+    }
+  }
+}

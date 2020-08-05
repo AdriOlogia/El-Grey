@@ -1,0 +1,505 @@
+:root {
+  --background--main--bg: white;
+  --font--helvetica: helvetica;
+  --font-cormorant: cormorant;
+  --font-opensans: opensans;
+  --font-opensans-light: opensans-light;
+  --background--salmon: #faf9f4;
+  --font-cormorant-regular:cormorant-garamond-regular
+
+
+}
+
+
+/**********
+FONTS
+**********/
+@font-face{
+  font-family: helvetica-normal;
+  src: url("../fonts/HelveticaNeue.ttc");
+}
+@font-face{
+  font-family: helvetica-roman;
+  src: url("../fonts/HelveticaNeueLTStd-Roman.otf");
+}
+@font-face{
+  font-family: helvetica;
+  src: url("../fonts/HelveticaNeueLTStd-Bd.otf")
+}
+@font-face{
+  font-family: cormorant-regular;
+  src: url("../fonts/Cormorant-Regular.ttf");
+}
+@font-face{
+  font-family: cormorant;
+  src: url("../fonts/CormorantGaramond-BoldItalic.ttf");
+}
+@font-face{
+  font-family: cormorant;
+  src: url("../fonts/CormorantGaramond-Italic.ttf");
+}
+@font-face{
+  font-family: cormorant;
+  src: url("../fonts/CormorantGaramond-LightItalic.ttf");
+}
+@font-face{
+  font-family: cormorant-garamond-regular;
+  src: url("../fonts/CormorantGaramond-Regular.ttf");
+}
+@font-face{
+  font-family: cormorant;
+  src: url("../fonts/CormorantGaramond-SemiBoldItalic.ttf");
+}
+@font-face{
+  font-family: opensans;
+  src: url("../fonts/OpenSans-Bold.ttf");
+}
+@font-face{
+  font-family: opensans-light;
+  src: url("../fonts/OpenSans-Light.ttf");
+}
+@font-face{
+  font-family: opensans;
+  src: url("../fonts/OpenSans-Regular.ttf");
+}
+@font-face{
+  font-family: opensans;
+  src: url("../fonts/OpenSans-SemiBold.ttf");
+}
+
+
+
+
+
+* {
+  font-family: var(--font-opensans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.main-site-wrapper {
+  overflow: hidden;
+}
+
+
+
+/**********
+  BASE
+**********/
+a {
+  color: black;
+  transition: text-shadow .3s;
+}
+a:hover {
+  color: grey;
+  font-weight: bolder;
+  transition: color .3s ease;
+  
+}
+a:hover, a:hover:visited {
+  color: #5ed1ef;
+  text-decoration: none !important;
+}
+
+ul,
+li {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/**********
+TITLES
+**********/
+h1 {
+  font-family: var(--font--helvetica), Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+  font-weight: 600;
+  color: #002451;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font--helvetica), Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+  color: #002451;
+}
+
+p {
+  font-family: var(--font-opensans-light);
+}
+
+/* contenido principal */
+.content-wrapper .content .container-fluid{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+/**********
+  SECTION
+**********/
+section {
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+/* ***********
+    Navbar navegacion
+  ************* */
+  #NavMenu{
+    background-color: var(--background--main--bg);
+  }
+  #mainNav .loGoo{
+    width: 100px;
+  }
+  .navbar-brand h3{
+    font-family: var(--font-opensans-light);
+    font-style: normal;
+  }
+  
+  #NavMenu ul li a{
+    font-family: var(--font-cormorant);
+    font-style: italic;
+    font-size: 20px;
+  }
+  .idiomas a{
+    font-family: var(--font-cormorant);
+    font-style: italic;
+    font-size: 15px;
+  }
+  
+
+
+/* ***********
+    Section I  TRANSFORMACION DIGITAL
+  ************* */
+
+  .transformacion-digital-items2 p{
+    font-family: var(--font-cormorant);
+    font-style: italic;
+    font-size: 20px;
+  }
+  .transformacion-digital{
+    background: url("../imgs/Recurso\ 2@2x.png");
+    background-size: cover;
+  }
+  
+
+
+
+/* ***********
+    Section II TRASCENDENCIA IDENTIDAD
+  ************* */
+  .trascendiendo-titulo h3{
+    color: #002451;
+    margin-left: -50px;
+  }
+  .trascendiendo-identidad::before {
+    content: '';
+    padding: 270px 130px;
+    background: #f6bd00;
+    position: absolute;
+    z-index: -1;
+    background-repeat: repeat;
+    right: 60px;
+  }
+
+  .trascendiendo-parrafo p{
+    font-family: var(--font-opensans-light);
+    font-style: normal;   
+  }
+
+  .trascendiendo-imagen img{
+    width: 400px;
+  }
+
+  @media screen and (max-width: 768px){
+    .trascendiendo-titulo h3{
+      margin-left: 0;
+    }
+    .trascendiendo-imagen img{
+      width: 300px;
+    }
+  }
+
+
+/* ***********
+    Section III  COMO CERTIFICARLOS
+  ************* */  
+  .como-certific{
+    background: url("../imgs/Recurso\ 3.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .certific-item-1 img{
+    width: 350px;
+  }
+
+  .como-certific-items{
+    background: white;
+    padding: 30px;
+  }
+  .como-certific-items p{
+    font-family: var(--font-opensans-light);
+    font-style: normal;
+  }
+  
+
+
+/* ***********
+    Section IV  BENEFICIOS
+  ************* */
+  .beneficios .media-body p{
+    font-family: var(--font-opensans-light);
+    font-style: normal;
+  }
+
+  .media img{
+    width: 50px;
+    height: 50px;
+  }
+  .beneficios{
+    background: var(--background--salmon);
+  }
+
+
+
+ /* *************
+      SECTION V beneficios
+    *****************/
+  .colaboracion-item-1::after{
+    content: '';
+    padding: 300px 80px;
+    background: #88a7a6;
+    position: absolute;
+    z-index: -1;
+    left: -120px;
+    top: -70px;
+    background-repeat: repeat;
+  }
+
+  .colaboracion-item-1{
+    background: white;
+    padding: 5%;
+  }
+
+  .colaboracion-item-1 p{
+    font-family: var(--font-opensans-light);
+    font-style: normal;
+  }
+  
+  .colaboracion-item-2 ul li{
+    font-family: var(--font-opensans);
+  }
+
+
+
+
+  
+/* *************
+      Grande - galeria
+    *****************/
+
+  .galeria-grande .flex-column {
+    max-width: 500px;
+  }
+  
+  .exampleImg img {
+      margin: 5px;
+  }
+  
+  .scale {
+      transform: scaleY(1.05);
+      padding-top: 5px; 
+  }
+
+  .artistas-obras::after{
+    content: "";
+    padding: 30px;
+    background-color: blue;
+  }
+
+
+/* *************
+      FORMULARIO
+    *****************/ 
+
+  .formulario {
+    background: var(--background--salmon);
+  }
+  .formulario p{
+    font-family: var(--font-opensans-light);
+    font-style: normal;
+  }
+
+  .formulario input{
+    border: none;
+    border-bottom: ridge black;
+    border-radius: 0px;
+    font-family: var(--font-opensans-light);
+  }
+
+
+/* *************
+      Pequeña galeria
+    *****************/
+  .peque-galeria-items img{
+    width: 450px;
+  }
+
+  .min-galeria-content p{
+    font-family: var(--font-cormorant-regular);
+    font-style: normal;
+    font-size: 20px;
+  }
+  .min-galeria a{
+    color: #002451;
+    font-family: var(--font--helvetica);
+  }
+
+/* FIN DEL INICIO / HOME */
+
+
+
+/* ***************************************
+              INICIO DE ARTE
+    **************************************  */
+  
+
+/* FIN ARTE*/
+
+/* ***************************************
+              INICIO DE BLOCKCHAIN
+    **************************************  */
+  .blockchain-item img{
+    width: 70%;
+  }
+  .blockchain-item-presentation img{
+    width: 50px;
+    height: 40px;
+  }
+  .blockchain-item-ul ul li{
+    font-family: var(--font-opensans-light);
+  }
+
+/* FIN BLOCKCHAIN*/
+
+/* ***************************************
+              INICIO DE ABOUT US
+    **************************************  */
+
+ 
+
+/* FIN ABOUT US*/
+
+/* ***************************************
+              INICIO DE NEWS
+    **************************************  */
+  .author-news{
+    font-style: italic;
+  }
+
+/* FIN NEWS*/
+
+/* ***************************************
+              INICIO DE EQUILIBRADO
+    **************************************  */
+
+  .margin-top{
+    min-height: 30vh;
+    margin-top: 100px;
+  }
+
+  .bkg-equilibrado{
+    padding: 50px 10px 100px 100px;
+    background: #084b7a;
+  }
+  .bkg-equilibrado h1{
+    color: white;
+  }
+
+/* FIN EQUILIBRADO */
+
+/* ***************************************
+              INICIO DE NEWS
+    **************************************  */
+  .news-articles img{
+    width: 300px;
+  }
+
+  .bkg-novedades {
+    padding: 50px 10px 50px 100px;
+  }
+
+/* FIN DE NEWS */
+
+  
+
+  /* *************
+      FOOTER
+    *****************/
+  .footer .terminos-politica a{
+    font-family: var(--font-opensans-light);
+  }
+
+/* FIN DEL FOOTER */
+
+  
+  /* *************
+      inicio del edia mediaQuery
+    *****************/
+@media screen and (max-width: 768px){
+  
+}
+@media screen and (max-width: 476px){
+
+  /*section 1 */
+  .transformacion-digital{
+    padding-top: 100px;
+  }
+  .transformacion-digital-items2 p{
+    padding-left: 20px;
+  }
+  .transformacion-digital-items2 p{
+    padding-left: 20px;
+  }
+
+  /* section 2 */
+  
+
+  /* section 5 */
+  
+  /* formulario */
+  .bkg-novedades{
+    padding: 0;
+  }
+  .margin-top{
+    margin-top: 80px;
+  }
+
+
+  /* ARTE */
+  .arte-galeria-img img{
+   width: 300px; 
+  }
+
+}
+
+@media screen and (min-width: 578px) and (orientation: landscape) {
+  .transformacion-digital{
+    margin-top: 60px;
+    
+  }
+}

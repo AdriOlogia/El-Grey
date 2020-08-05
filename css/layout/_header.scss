@@ -1,0 +1,134 @@
+/**********
+    HEADER
+  **********/
+
+#mainNav {
+  height: 100px !important;
+  cursor: pointer;
+  background-color: white;
+
+
+  li a {
+    font-weight: bolder;
+    color: $darkBlue;
+    transition: text-shadow .3s;
+
+    &:hover,
+    &:visited {
+      text-shadow: 0 0 1px #333, 0 0 1px #333;
+    }
+
+  }
+
+  // DESKTOP DROPDOWN MENU
+  // dropdown item
+  .dropdown-link {
+    position: relative;
+
+    //any dropdown list
+    .dropdown-list,
+    .deep-dropdown-list {
+      visibility: hidden !important;
+      width: 250px;
+      border-radius: 10px;
+      background: white;
+      position: absolute;
+      top: 0;
+      opacity: 0;
+      transition: all .3s linear;
+      -webkit-box-shadow: 3px 13px 20px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 3px 13px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 3px 13px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    // any li element on a dropdown menu
+    li {
+      padding: 20px !important;
+      width: 100%;
+    }
+
+    &:hover {
+      .dropdown-list {
+        visibility: visible !important;
+        transform: translateY(40px);
+        opacity: 1;
+
+        // deep-dropdown-list
+        .deep-dropdown-list {
+          visibility: hidden !important;
+          left: 160px;
+        }
+
+        // link to a deep-dropdown
+        .deepdown-link {
+
+          &:hover {
+            .deep-dropdown-list {
+              visibility: visible !important;
+              transform: translateX(80px);
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  /* burguer */
+  /* APPLYING COMPANY COLOR TO BOOTSTRAP BURGUER */
+  .custom-toggler.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(27, 58, 80)' stroke-width='5' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+  }
+
+  .navbar-toggler {
+    border: none !important;
+  }
+
+  /* custom style for div collapse */
+  .collapse {
+    justify-content: flex-end !important;
+  }
+
+  .responsive-menu-title {
+    & .nav-link {
+      padding: 0 !important;
+      margin: 0 !important;
+
+    }
+  }
+
+  // Mobile menu
+  // Custom style for hidden menu
+  #togglerBurguer {
+    &:target {
+      display: flex !important;
+    }
+
+    &:not(:target) {
+      display: none !important;
+
+    }
+  }
+
+  .hidden-menu-style {
+    overflow: scroll;
+
+    .nav-item,
+    .nav-link {
+      margin-top: 10px !important;
+    }
+
+    li {
+      padding: 0 10px !important;
+      margin: 0 10px !important;
+    }
+
+    width: 100%;
+    height: 100%;
+    position: fixed !important;
+    top: 100px !important;
+    background: white;
+    padding-bottom: 50px;
+  }
+}

@@ -1,0 +1,55 @@
+<?php
+/*
+	Esto es el fallo artificial cuando se intenta acceder al directorio Ajax directamente.
+*/
+
+
+header($_SERVER['SERVER_PROTOCOL'].' 404 Not Found');
+header("Content-type: text/html; charset=UTF-8");
+
+
+// Inicializar todas las constantes para comenzar a laburar...
+require_once('../initialize.php');
+// Establecer las constantes de configuración
+require_once(DIR_config.'config.inc.php');
+require_once(DIR_includes.'class.logging.inc.php'); // Para escribir entradas en el log de eventos.
+
+$this_file = substr($this_file,strlen(DIR_BASE))." ";
+
+cLogging::Write($this_file.__LINE__." Se intentó acceder directamente.");
+
+?>
+<html>
+<head>
+<title>Error HTTP 404</title>
+<style type="text/css">
+* {
+margin: 0;padding: 0;
+}
+html, body {
+	font-family: 'Arial','Helvetica',sans-serif;
+}
+h1 {
+	font-size: 14pt;
+}
+p {
+	font-size: 12pt;
+}
+h1, p {
+	text-align: center;
+}
+h1 {
+	margin-top: 1em;
+}
+p {
+	margin: 1em;
+}
+</style>
+</head>
+
+<body>
+<h1>Error HTTP 404.</h1>
+<p>El contenido solicitado no ha sido encontrado.</p>
+<p>Disculpe las molestias ocasionadas.</p>
+</body>
+</html>

@@ -1,0 +1,118 @@
+* {
+  font-family: 'Avenir';
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.main-site-wrapper {
+  overflow: hidden;
+}
+
+/**********
+  BASE
+**********/
+a {
+  color: $lightBlue;
+  transition: text-shadow .3s;
+
+  &:hover {
+    color: $darkBlue;
+    text-shadow: 0 0 .65px #333, 0 0 .65px #333;
+
+    &,
+    &:visited {
+      color: $lightBlue;
+      text-decoration: none !important;
+    }
+  }
+}
+
+
+
+ul,
+li {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/**********
+TITLES
+**********/
+h1,
+h2,
+h3,
+h4 {
+  font-family: MyriadPro, Verdana, Geneva, Tahoma, sans-serif;
+  width: fit-content;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: $darkBlue;
+}
+
+h2 {
+
+  line-height: 45px;
+  font-size: 50px;
+
+  @media (max-width: $mdBreakpoint) {
+    line-height: 35px;
+    font-size: 30px;
+  }
+
+  @media (max-width: $smBreakpoint) {
+    line-height: 25px;
+    font-size: 20px;
+  }
+}
+
+/**********
+  PARAGRAPH
+**********/
+
+p {
+  color: $darkGray;
+  font-size: 20px;
+
+  @media (max-width: $mdBreakpoint) {
+    font-size: 15px;
+  }
+
+  @media (max-width: $smBreakpoint) {
+    font-size: 13px;
+  }
+
+
+}
+
+/**********
+  SECTION
+**********/
+section {
+  //PADDING TO SHOW PROPER POSITION ON ANCHOR
+  padding-top: 0;
+  font-family: 'Avenir' !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+
+
+  @media (min-width:$mdBreakpoint) {
+    height: 100vh;
+  }
+
+  .section-container {
+    width: 70%;
+    margin: 0 auto;
+
+    @media (min-width: $mdBreakpoint) {
+      margin: 0;
+    }
+
+  }
+}

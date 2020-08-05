@@ -1,0 +1,329 @@
+/*******************************
+  THINKTRANSFORMATION SECTION
+********************************/
+
+.think-transformation {
+  background-image: url("../imgs/bkgs/Bkg_Home.jpg");
+  justify-content: flex-end !important;
+  align-items: center !important;
+
+
+  .section-container {
+    @media (min-width: $lgBreakpoint) {
+      width: 700px;
+
+      p {
+        padding: 0 70px 0 0;
+      }
+    }
+
+    @media (max-width: $mdBreakpoint) {
+      font-size: 15px;
+    }
+
+    @media (max-width: $smBreakpoint) {
+      font-size: 12px;
+    }
+
+
+  }
+}
+
+
+/*******************************
+  WHATWEDO SECTION
+********************************/
+.what-we-do {
+  background-image: url("../imgs/bkgs/Bkg_WeDo.jpg");
+  background-size: cover !important;
+
+  article {
+    background-color: white;
+    height: fit-content;
+    border-radius: 10px;
+    font-size: 20px;
+    color: $darkGray;
+    -webkit-box-shadow: 42px 39px 28px -43px rgba(0, 0, 0, 0.59);
+    -moz-box-shadow: 42px 39px 28px -43px rgba(0, 0, 0, 0.59);
+    box-shadow: 42px 39px 28px -43px rgba(0, 0, 0, 0.59);
+
+    // icono
+    &::before {
+      font-family: 'Font Awesome 5 Free' !important;
+      font-weight: 900 !important;
+      content: '\f055';
+      color: $lightBlue;
+      margin-right: 10px;
+      ;
+    }
+
+    // block view
+    @media (min-width: $lgBreakpoint) {
+      height: 200px;
+    }
+
+    @media (max-width: $mdBreakpoint) {
+      font-size: 15px;
+    }
+
+    @media (max-width: $smBreakpoint) {
+      font-size: 12px;
+    }
+
+
+  }
+
+  h3 {
+    font-size: 40px;
+    margin: 0 auto;
+    font-weight: bolder;
+  }
+
+}
+
+/*******************************
+  INNOVATION SECTION
+********************************/
+.lead-innovation {
+  background-image: url("../imgs/bkgs/Bkg_Lean.jpg");
+  background-size: 200%;
+  background-position: left;
+
+  h2 {
+    // not uppercase
+    text-transform: none !important;
+    margin-bottom: 40px;
+    padding-top: 10px !important;
+  }
+
+
+
+  span {
+    font-weight: lighter;
+    color: $darkGray;
+
+    @media (min-width: $smBreakpoint) {}
+
+    @media (max-width: $mdBreakpoint) {
+      line-height: 13px;
+      font-size: 13px !important;
+    }
+
+    @media (min-width: $mdBreakpoint) {
+      font-size: 20px;
+    }
+
+    img {
+      max-width: 60px;
+
+      @media (max-width: $smBreakpoint) {
+        max-width: 30px;
+      }
+
+      @media (max-width: $mdBreakpoint) {
+        max-width: 40px;
+      }
+    }
+  }
+
+}
+
+/*******************************
+  VALUES SECTION
+********************************/
+.our-value-proposition {
+  background-image: url("../imgs/bkgs/Bkg_Home.jpg");
+
+  h2 {
+    text-transform: none !important;
+  }
+
+  .bubble-right {
+    height: 555px !important;
+    width: 555px !important;
+    background-image: url("../imgs/bkgs/bkg_value_bubble_Left.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  .bubble-left {
+    height: 555px !important;
+    width: 555px !important;
+    background-image: url("../imgs/bkgs/bkg_value_bubble_Right.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  #solid-bussiness,
+  #unparalleled-experience,
+  #track-record,
+  #reasonable-pricing,
+  #top-tier,
+  #tailoring-solutions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white !important;
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  // LARGE BUBBLE
+  #track-record,
+  #solid-bussiness {
+    top: 78px;
+    height: 245px;
+    width: 245px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 45px;
+    font-size: 35px;
+  }
+
+  #solid-bussiness {
+    right: 70px;
+  }
+
+  #track-record {
+    left: 70px;
+  }
+
+  // MEDIUM BUBBLE
+  #unparalleled-experience,
+  #reasonable-pricing {
+    bottom: 160px;
+    height: 140px;
+    width: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
+
+  #unparalleled-experience {
+    left: 85px;
+  }
+
+  #reasonable-pricing {
+    right: 85px;
+  }
+
+  // SMALL BUBBLE
+  #top-tier,
+  #tailoring-solutions {
+    top: 113px;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 100;
+    font-size: 12px;
+  }
+
+  #top-tier {
+    right: 78px;
+  }
+
+  #tailoring-solutions {
+    left: 78px;
+  }
+}
+
+/*******************************
+  ABOUT SECTION
+********************************/
+.about-us {
+  background-color: $darkBlue;
+
+  * {
+    color: white !important
+  }
+
+
+  .profile-position {
+    font-size: 12px;
+    line-height: 10px;
+
+    @media (max-width: $mdBreakpoint) {
+      font-size: 10px;
+    }
+  }
+
+  .profile-people {
+    display: flex;
+
+    .profile-people-img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+
+      @media (max-width: $mdBreakpoint) {
+        width: 70px;
+        height: 70px;
+      }
+    }
+
+    .profile-people-description {
+      img {
+        width: 15px;
+        margin-right: 3px;
+      }
+
+      @media (max-width: $mdBreakpoint) {
+        font-size: 10px;
+      }
+
+
+    }
+  }
+}
+
+/*******************************
+  CONTACT SECTION
+********************************/
+.contact-us {
+  padding-top: 0 !important;
+  background-image: url("../imgs/bkgs/Bkg_Contact.jpg");
+  background-size: cover;
+  background-position: top top;
+
+  h2 {
+    padding-top: 150px !important;
+    color: white !important;
+  }
+
+  .contact-info-container {
+    padding-top: 0 !important;
+
+    h2 {
+      margin: 0 !important;
+      padding: 0 !important;
+      color: $darkBlue !important;
+      text-align: center;
+    }
+
+    .contact-information {
+      margin: 40px 20px !important;
+
+      .contact-city {
+        font-weight: bolder !important;
+        text-transform: uppercase;
+
+        &:before {
+          display: inline;
+          font-family: 'Font Awesome 5 Free' !important;
+          font-weight: 900 !important;
+          content: '\f3c5';
+          color: $lightBlue;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+
+
+}

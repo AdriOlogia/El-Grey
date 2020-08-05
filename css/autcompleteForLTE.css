@@ -1,0 +1,50 @@
+ul.fmd-autocomplete {
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: default;
+	list-style: none;
+    padding: 2px;
+    margin: 0;
+    display: block;
+    outline: none;
+	box-sizing: border-box;
+	background-color: #FFFFFF;
+	border: 1px solid #ced4da;
+	border-radius: 0 0 4px 4px;
+	vertical-align: middle;
+	z-index: 1052;
+}
+ul.fmd-autocomplete > li.fmd-autocomplete-item {
+    margin: 0;
+    padding: 6px 12px;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    outline: none;
+	user-select: none;
+	-webkit-user-select: none;
+	list-style: none;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #212529;
+}
+/*
+ul.fmd-autocomplete > li.fmd-autocomplete-item:nth-child(2n) {
+	background-color: #EFEFEF;
+}
+*/
+ul.fmd-autocomplete > li.fmd-autocomplete-item:hover {
+	background-color: #0074f0;
+    color: #fff;
+}
+
+ul.fmd-autocomplete > li.fmd-autocomplete-item.selected {
+	background-color: #007bff;
+	color: #FFFFFF;
+}
+.fmd-autocomplete-loading {
+	background-image: url('<?php echo URL_imgs; ?>indicator.gif');
+	background-repeat: no-repeat;
+	background-position: 99% center;
+}

@@ -1,0 +1,44 @@
+# Para poner el sitio en mantenimiento
+RewriteEngine on
+
+Options -MultiViews
+# Por si tira algun pato
+Options +FollowSymlinks
+
+# Seteo el charset en UTF-8
+AddDefaultCharset utf-8
+
+# Bloqueo el listado de directorios
+Options -Indexes
+
+# Bloqueo el acceso a todos los archivos del sitio
+ <FilesMatch "\.(ini|log|bak|bak\.php|json)$">
+ Order deny,allow
+ Deny from all
+ </FilesMatch>
+
+# Habilito el acceso solo a los 3 archivos principales (index, SecureMyAjax, CargaDinamica)
+<FilesMatch "(index.php)|(cargadinamica.php)|(secureMyAjax.php)$">
+	Order allow,deny
+	Allow from all
+</FilesMatch>
+
+# Bloqueo el acceso al htaccess
+<Files .htaccess>
+	Order allow,deny
+	Deny from all
+</Files>
+
+# Le digo al usuario que no se haga el loco
+ErrorDocument 403 /errordocs/403
+
+# SEO URL Settings
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !.*\.(ico|gif|jpg|jpeg|png|js|css)
+
+# L hace que si coincide la regla, no procese ninguna mas
+# QSA hace que pingaso?pepino=algo se convierta en index.php?_ruta_=pingaso&pepino=algo (convierte ? en &...)
+RewriteRule ^([a-zA-Z0-9_\-/\.]+)$ index.php?_ruta_=$1 [L,QSA]

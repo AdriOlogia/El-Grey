@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="es-AR">
+	<meta charset="UTF-8">
+	<meta name="Author" content="AdrianA" />
+	<meta name="AuthorLink" content="AAAB" />
+	<meta description="<?php echo @$objeto_contenido->description; ?>" />
+	<meta keywords="<?php echo @$objeto_contenido->keywords; ?>" />
+	<meta generator="" />
+
+	<meta name="robots" content="INDEX,FOLLOW">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimum-scale=1">
+
+	<link rel="icon" type="image/png" href="<?php echo SITE_mainlogo; ?>" />
+	<link rel="author" type="text/plain" href="<?php echo SITE_humans; ?>" />
+
+	
+
+
+	<?php
+if (!empty($objeto_contenido->geo)) {
+	foreach ($objeto_contenido->geo as $key => $value) {
+?>
+	<meta name="geo.<?php echo $key; ?>" content="<?php echo $value; ?>" />
+	<?php
+	} // foreach geo
+} // !empty geo
+?>
+
+	<?php
+if (!empty($objeto_contenido->seo)) {
+	foreach ($objeto_contenido->seo as $key => $value) {
+?>
+	<meta property="og.<?php echo $key; ?>" content="<?php echo $value; ?>" />
+	<?php
+	} // foreach seo
+} // !empty seo
+?>
+
+	<title><?php echo $objeto_contenido->GetTitulo(); ?></title>
+
+	<meta name="keywords" content="Fast software development,
+	Highly skilled development teams,
+	Secure technical solution,
+	Talent on-demand,
+	Digital solutions,
+	Experienced IT teams,
+	Co-create software solutions,
+	Technical solutions for start-ups and companies that are,
+	seeking to innovate,
+	Software development company,
+	Business software,
+	Technology consulting,
+	Data solutions">
+
+	<meta name="title" content="We offer fintech software, consulting services and fast IT development for businesses seeking to
+	innovate"
+	 />
+
+	<base href="<?php echo BASE_URL; ?>" />
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+	</script>
+	<link rel="stylesheet" href="../../css/normalize.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+	</script>
+
+	<!--carrusel  -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+	<link rel="stylesheet" type="text/css" href="https://kenwheeler.github.io/slick/slick/slick-theme.css"/>
+
+	
+	
+	
+	<link rel="stylesheet" type="text/css" media="all" href="<?php 
+		echo BASE_URL."css/".$objeto_contenido->GetLink(false);
+	?>" />
+
+	<script type="text/javascript" src="<?php
+		echo BASE_URL."js/".$objeto_contenido->GetLink(false);
+		if (strpos(@$objeto_contenido->metadata->js,"autocomplete") !== FALSE) {
+			echo "/jquery.autocomplete/";
+		}
+	?>"></script>
+	<?php
+if (!empty($objeto_contenido->customjs)) {
+	if (ExisteArchivo(DIR_common.$objeto_contenido->customjs)) {
+		require(DIR_common.$objeto_contenido->customjs);
+	} else {
+		if (ExisteArchivo($objeto_contenido->customjs)) {
+			require($objeto_contenido->customjs);
+		}
+	}
+}
+?>
+	
+	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+		crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+	<script type="text/javascript">
+		var __cfRLUnblockHandlers = 1;
+	</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165106987-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165106987-1');
+</script>
+</head>
+<!--
+<body>
+	<p>Si puedes ver esto, es porque algo muy grave ha sucedido...</p>
+</body>
+-->
+
+<body class="">

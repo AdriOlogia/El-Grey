@@ -1,0 +1,23 @@
+
+$this_file = substr(__FILE__,strlen(DIR_BASE))." ";
+
+
+		$result = false;
+		try {
+			$sql = "SELECT * FROM ".SQLQuote()." WHERE ";
+			$this->Query($sql);
+			if ($fila = $this->First()) {
+			}
+		} catch(Exception $e) {
+			$this->SetError(__METHOD__,$e->getMessage());
+		}
+		return $result;
+
+
+try {
+	$objeto_db->();
+	if ($objeto_db->error) { throw new Exception(__LINE__." DBErr: ".$objeto_db->errmsg); }
+} catch(Exception $e) {
+	EchoLog($e->getMessage());
+	cLogging::Write($this_file.__LINE__." ".$e->getMessage());
+}

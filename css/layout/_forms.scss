@@ -1,0 +1,27 @@
+/**********
+    FORMS
+  **********/
+.form-container {
+  height: 100%;
+  padding: 0 50px 50px 50px;
+  background-color: $darkBlue !important;
+  color: white !important;
+
+  label {
+    margin-right: 5px;
+    display: block;
+    width: 170px;
+  }
+
+  input {
+    width: 90% !important;
+  }
+
+  button {
+    color: white !important;
+  }
+
+  @media (max-width: $mdBreakpoint) {
+    width: 100vw;
+  }
+}
