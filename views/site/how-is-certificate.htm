@@ -1,0 +1,56 @@
+<section id="how-is-certificate" class="how-is-certificate margin-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>How is a certificate created</h1>
+      </div>
+      <div class="col-lg-12">
+        <p>
+          Basically, we encrypt the information of the certificate of
+          authenticity, we get a hash as a result of that encryption, and it is
+          that hash that we store on the blockchain. Source data cannot be
+          reconstructed from hash stored on Blockchain.
+        </p>
+        <h5 class="my-4">Certification process steps</h5>
+        <p>
+          First, we take the information to be certified (source data) and
+          through a procedure called SHA 256, we encrypt that information and
+          obtain a hash (one-way alphanumeric code) as a result.
+        </p>
+        <div class="mx-3">
+          <img src="" alt="cuadro" />
+        </div>
+      </div>
+      <div class="col-lg-12 my-5">
+        <p>
+            Every time we want to validate that a certificate or certain information has not been altered, we carry out the following steps:
+        </p>
+        <div class="list-numeration">
+            <ol>
+                <li>We recalculate the hash of the source information, using the SHA-256 function.</li>
+                <li> If the obtained hash matches the hash stored on the blockchain, then the information has not been altered, and the certificate is valid.</li>
+                <li> If the obtained hash does not match the hash stored on the blockchain, then the source information has been altered
+                    and the certificate is invalid.</li>
+            </ol>
+            <p>The source information is never published on the Blockchain and is only stored on the organization's servers. Only the
+                cryptographic function of that information is stored on the blockchain.</p>
+        </div>
+      </div>
+      <div class="col-lg-12">
+          <h5 class="my-4">Immutable certificates</h5>
+          <p>Blockchain is an immutable and distributed database, where each block of information is related to the previous one. When a
+            certificate is issued, your data is compressed into a hash and registered on the blockchain. This generates a "receipt" that can
+            always be verified at a later date. Our verification service validates the issuer's signature and the certificate data; It also ensures
+            that the status of the certificate has not expired or has been revoked.</p>
+            <p>The friendly version of the certificate displayed online can change visually, depending on the device that displays it. For example, it may appear one way in a mobile app and slightly differently in a web browser. Although this screen can be optimized for
+                different circumstances, the data within the certificate can never be changed.</p>
+      </div>
+      <div class="col-lg-12">
+          <h5 class="my-4">Can issued certificates be changed?</h5>
+          <p>The certificates are immutable and once the information is registered, it cannot be altered. However, through El Grey ID you
+            can revoke the certificates or define their validity time. The issuer can revoke certificates that have errors or simply omit a
+            recipient.</p>
+      </div>
+    </div>
+  </div>
+</section>

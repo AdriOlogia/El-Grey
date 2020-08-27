@@ -169,9 +169,17 @@ section {
     font-size: 20px;
   }
   .idiomas a{
-    font-family: var(--font-cormorant);
-    font-style: italic;
-    font-size: 15px;
+    font-size: 15px !important;
+    padding-top: 12px;
+  }
+  .dropdown-menu{
+    border: white;
+  }
+  .dropdown-menu a{
+    font-size: 15px !important;
+  }
+  .dropdown-toggle::after{
+    display: none;
   }
   
 
@@ -276,7 +284,7 @@ section {
 
 
  /* *************
-      SECTION V beneficios
+      SECTION V colaboracion
     *****************/
   .colaboracion-item-1::after{
     content: '';
@@ -411,6 +419,9 @@ section {
   .blockchain-item img{
     width: 70%;
   }
+  .blockchain-item-presentation p{
+    font-size: 12px;
+  }
   .blockchain-item-presentation img{
     width: 50px;
     height: 40px;
@@ -419,15 +430,27 @@ section {
     font-family: var(--font-opensans-light);
   }
 
+  .lista-desordenada ul ul{
+    padding-left: 30px !important;
+    margin-top: 50px !important;
+  }
+  .lista-desordenada ul ul li{
+    margin: 20px !important;
+    font-family: var(--font-opensans-light);
+  }
+
 /* FIN BLOCKCHAIN*/
 
 /* ***************************************
-              INICIO DE ABOUT US
+               HOW IS CERTIFICATE
     **************************************  */
-
+  .list-numeration ol li{
+    list-style: decimal !important;
+    font-family: var(--font-opensans-light);
+  }
  
 
-/* FIN ABOUT US*/
+/* FIN HOW IS CERTIFICATE*/
 
 /* ***************************************
               INICIO DE NEWS
@@ -510,6 +533,10 @@ section {
 
   /* section 2 */
   
+  /* section 4 */
+  .beneficios-titulo{
+    padding-left: 35px;
+  }
 
   /* section 5 */
   
