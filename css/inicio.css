@@ -99,7 +99,8 @@ a:hover {
   
 }
 a:hover, a:hover:visited {
-  color: #5ed1ef;
+  color: black;
+  font-weight: bolder;
   text-decoration: none !important;
 }
 
@@ -180,6 +181,9 @@ section {
   }
   .dropdown-toggle::after{
     display: none;
+  }
+  .dropdown-item.active, .dropdown-item:active{
+    background-color: white;
   }
   
 
@@ -280,6 +284,7 @@ section {
   .beneficios{
     background: var(--background--salmon);
   }
+
 
 
 
@@ -422,10 +427,6 @@ section {
   .blockchain-item-presentation p{
     font-size: 12px;
   }
-  .blockchain-item-presentation img{
-    width: 50px;
-    height: 40px;
-  }
   .blockchain-item-ul ul li{
     font-family: var(--font-opensans-light);
   }
@@ -437,6 +438,9 @@ section {
   .lista-desordenada ul ul li{
     margin: 20px !important;
     font-family: var(--font-opensans-light);
+  }
+  .media img{
+    height: 65px;
   }
 
 /* FIN BLOCKCHAIN*/
@@ -480,6 +484,16 @@ section {
 
 /* FIN EQUILIBRADO */
 
+
+/* ***************************************
+              WHAT IS BLOCKCHAIN
+    **************************************  */
+
+    
+
+
+
+
 /* ***************************************
               INICIO DE NEWS
     **************************************  */
@@ -512,13 +526,32 @@ section {
 /* FIN DEL FOOTER */
 
   
+  /* carrusel configuracion */
+  .pista-carrusel{
+    display:none;
+    visibility: hidden;
+  } 
+
+
+
   /* *************
       inicio del edia mediaQuery
     *****************/
 @media screen and (max-width: 768px){
-  
-}
-@media screen and (max-width: 476px){
+  header .container-fluid{
+    background-color: white !important;
+  }
+
+  /* carrusel */
+  .pista-carrusel{
+    display: block;
+    visibility: visible;
+    text-align: center;
+  }
+  .sin-carrusel{
+    display: none;
+    visibility: hidden;
+  }
 
   /*section 1 */
   .transformacion-digital{
@@ -532,6 +565,18 @@ section {
   }
 
   /* section 2 */
+
+
+  /* section 3 */
+  
+  .como-certific {
+    background-position-y: 305px;
+}
+  .como-certific-items{
+    margin-top: 200px;
+  }
+  
+  
   
   /* section 4 */
   .beneficios-titulo{
@@ -539,7 +584,22 @@ section {
   }
 
   /* section 5 */
+
+  .colaboracion-item-2{
+    margin-top: 50px;
+  }
+  .colaboracion-item-1::after{
+    padding: 195px 80px;
+  }
   
+
+  /* what is blockchain */
+  .cube-blockchain img{
+   width: 700px;   
+  }
+
+
+
   /* formulario */
   .bkg-novedades{
     padding: 0;
@@ -559,6 +619,21 @@ section {
     display: none;
   }
 
+  
+}
+
+@media screen and (max-width: 476px){
+  .como-certific{
+    background-position-y: 480px;
+  }
+
+  .cube-blockchain img{
+    width: 400px;   
+   }
+
+   .graficos-img img{
+     width: 330px;
+   }
 }
 
 @media (orientation: landscape) and (max-width: 820px) {
@@ -569,5 +644,16 @@ section {
   .separador{
     display: none;
   }
+
+  .sin-carrusel{
+    text-align: center;
+  }
   
+}
+
+@media screen and (max-width: 380px){
+  .cube-blockchain img{
+    width: 300px;   
+   }
+
 }
