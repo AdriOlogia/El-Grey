@@ -204,7 +204,24 @@ section {
     background: url("../imgs/Recurso\ 2@2x.png");
     background-size: cover;
   }
-  
+
+  .transformacion-digital::after{
+    content: 'PH LAURA FERRO';
+    position: absolute;
+    bottom: 100px;
+    right: 80px;
+    color: white;
+  }
+
+  /* ***********
+    Section II  TRASECENDIENDO
+  ************* */
+  .trascendiendo-imagen::after{
+    content: 'ARY BRIZZI';
+    position: absolute;
+    font-size: 12px;
+    font-family: var(--font-opensans-light);
+  }
 
 
 
@@ -285,6 +302,10 @@ section {
     background: var(--background--salmon);
   }
 
+  .beneficios .media img{
+    opacity: 0.5;
+  }
+
 
 
 
@@ -337,24 +358,39 @@ section {
       padding-top: 5px; 
   }
 
- /*  .artist-name1::before{
-    content: "Nombre";
+  .artist-name1::before{
+    content: "Nombre Galeria";
     padding: 5px;
     position: absolute;
     left: 200px;
     font-family: var(--font-opensans-light);
     background-color: white;
-    border-radius: 50px;
   }
   .artist-name2::before{
-    content: "EDUARDO SALVADO";
+    content: "Nombre Galeria";
     position: absolute;
     padding: 5px;
     left: 200px;
     font-family: var(--font-opensans-light);
     background-color: white;
-    border-radius: 50px;
-  } */
+  }
+  .artist-name3::before{
+    content: 'EDUARDO BASUALDO';
+    position: absolute;
+    padding: 5px;
+    right: 170px;
+    font-family: var(--font-opensans-light);
+    background-color: white;
+  }
+  .artist-name4::before{
+    content: 'Nombre Artista';
+    position: absolute;
+    padding: 5px;
+    right: 219px;
+    font-family: var(--font-opensans-light);
+    background-color: white;
+    z-index: 1;
+  }
 
 
 /* *************
@@ -417,6 +453,35 @@ section {
   }
 
 /* FIN ARTE*/
+
+
+/* ***************************************
+              INICIO DE ARTE
+    **************************************  */
+    .purpose-img::after{
+      content: 'AGUSTINA BOTTONI';
+      font-family: var(--font-opensans-light);
+      position: absolute;
+      bottom: -35px;
+      font-size: 12px;
+      right: 10px;
+    }
+    @media screen and (max-width: 576px){
+      .purpose-img::after{
+        content: '';
+      }
+      .purpose-img::before{
+        content: 'AGUSTINA BOTTONI';
+        font-size: 12px;
+        font-family: var(--font-opensans-light);
+      }
+      .purpose-text{
+        margin-bottom: 1.5rem!important;
+        margin-top: 1.5rem!important;
+      }
+    }
+  
+  /* FIN ARTE*/
 
 /* ***************************************
               INICIO DE BLOCKCHAIN
