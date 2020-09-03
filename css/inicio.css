@@ -1,7 +1,8 @@
 :root {
   --background--main--bg: white;
   --font--helvetica: helvetica;
-  --font-cormorant: cormorant;
+  --font--helvetica-roman: helvetica-roman;
+  --font-cormorant: cormorant garamond;
   --font-opensans: opensans;
   --font-opensans-light: opensans-light;
   --background--salmon: #faf9f4;
@@ -92,15 +93,11 @@ a {
   color: black;
   transition: text-shadow .3s;
 }
-a:hover {
-  color: grey;
-  font-weight: bolder;
-  transition: color .3s ease;
-  
-}
+
 a:hover, a:hover:visited {
   color: black;
   font-weight: bolder;
+  transition: color .3s ease;
   text-decoration: none !important;
 }
 
@@ -110,6 +107,12 @@ li {
   padding: 0 !important;
   margin: 0 !important;
 }
+ 
+
+
+
+
+
 
 /**********
 TITLES
@@ -132,6 +135,11 @@ h5 {
 
 p {
   font-family: var(--font-opensans-light);
+}
+
+.btn{
+  padding: 20px 30px;
+  border-radius: 0px;
 }
 
 
@@ -167,11 +175,11 @@ section {
   #NavMenu ul li a{
     font-family: var(--font-cormorant);
     font-style: italic;
-    font-size: 20px;
+    font-size: 18px;
   }
   .idiomas a{
-    font-size: 15px !important;
-    padding-top: 12px;
+    font-size: 13px !important;
+    padding-top: 11px;
   }
   .dropdown-menu{
     border: white;
@@ -188,6 +196,7 @@ section {
   .collapse ul li:nth-child(4){
     cursor: pointer;
   }
+
   
 
 
@@ -201,7 +210,8 @@ section {
   .transformacion-digital-items2 p{
     font-family: var(--font-cormorant);
     font-style: italic;
-    font-size: 20px;
+    line-height: 2rem;
+    color: black;
   }
   .transformacion-digital{
     background: url("../imgs/Recurso\ 2@2x.png");
@@ -212,24 +222,14 @@ section {
   .transformacion-digital::after{
     content: 'PH LAURA FERRO';
     position: absolute;
-    font-size: 12px;
+    font-size: 8px;
     bottom: 10px;
     right: 40px;
     color: white;
-  }
-
-  /* ***********
-    Section II  TRASECENDIENDO
-  ************* */
-  .trascendiendo-imagen::after{
-    content: 'ARY BRIZZI';
-    position: absolute;
-    font-size: 12px;
-    font-family: var(--font-opensans-light);
+	letter-spacing: 2px;
   }
 
   
-
 
 
 /* ***********
@@ -237,7 +237,6 @@ section {
   ************* */
   .trascendiendo-titulo h3{
     color: #002451;
-    margin-left: -50px;
   }
   .trascendiendo-imagen::before {
     content: '';
@@ -245,16 +244,23 @@ section {
     background: #f6bd00;
     position: absolute;
     z-index: -1;
-    right: -75px;
+    right: -100px;
     top: -45px;
+  }
+
+  .trascendiendo-imagen::after{
+    content: 'ARY BRIZZI';
+    font-size: 8px;
+    font-family: var(--font--helvetica-regular);
   }
 
   .trascendiendo-parrafo p{
     font-family: var(--font-opensans-light);
-    font-style: normal;   
+    font-style: normal;
+	font-size: 18px;
   }
   .trascendiendo-parrafo{
-    padding: 2%;
+    padding: 0% 2%;
   }
 
   .trascendiendo-imagen img{
@@ -281,11 +287,12 @@ section {
     background: url("../imgs/Recurso\ 3.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: 650px;
+    background-position-y: 85px;
   }
 
   .certific-item-1 img{
-    width: 350px;
+    width: 400px;
   }
 
   .como-certific-items{
@@ -319,6 +326,11 @@ section {
     opacity: 0.5;
   }
 
+  .sin-carrusel .col-lg-4,
+  .pista-carrusel .col-lg-4{
+    background-color: #f9f9f9;
+  }
+
 
 
 
@@ -347,11 +359,13 @@ section {
   .colaboracion-item-1 p{
     font-family: var(--font-opensans-light);
     font-style: normal;
+    padding: 5% 10%;
   }
   
   .colaboracion-item-2 ul li{
     font-family: var(--font-opensans);
     padding-left: 15px !important;
+    
   }
 
 
@@ -384,7 +398,7 @@ section {
     font-family: var(--font-opensans-light);
     background-color: white;
     left: -80px;
-    bottom: -20px;
+    bottom: -45px;
   }
   .artist-name2::before{
     content:"NOMBRE \A GALERIA";
@@ -402,7 +416,7 @@ section {
     font-size: 12px;
     position: relative;
     left: 500px;
-    top: 20px;
+    top: 45px;
     font-family: var(--font-opensans-light);
     background-color: white;
   }
@@ -412,7 +426,7 @@ section {
     font-size: 12px;
     position: relative;
     left: 500px;
-    top: 20px;
+    top: 40px;
     background-color: white;
     z-index: 1;
     font-family: var(--font-opensans-light);
