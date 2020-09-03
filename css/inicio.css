@@ -185,6 +185,9 @@ section {
   .dropdown-item.active, .dropdown-item:active{
     background-color: white;
   }
+  .collapse ul li:nth-child(4){
+    cursor: pointer;
+  }
   
 
 
@@ -236,14 +239,14 @@ section {
     color: #002451;
     margin-left: -50px;
   }
-  .trascendiendo-identidad::before {
+  .trascendiendo-imagen::before {
     content: '';
-    padding: 253px 130px;
+    padding: 234px 130px;
     background: #f6bd00;
     position: absolute;
     z-index: -1;
-    right: 60px;
-    top: 1045px;
+    right: -75px;
+    top: -45px;
   }
 
   .trascendiendo-parrafo p{
@@ -256,6 +259,9 @@ section {
 
   .trascendiendo-imagen img{
     width: 400px;
+  }
+  .trascendiendo-imagen{
+    top: -100px;
   }
 
   @media screen and (max-width: 768px){
@@ -547,6 +553,7 @@ section {
   }
   .blockchain-item-presentation p{
     font-size: 12px;
+    font-weight: bold;
   }
   .blockchain-item-ul ul li{
     font-family: var(--font-opensans-light);
@@ -574,7 +581,10 @@ section {
   }
 
   .cube-blockchain img{
-    width: 500px;
+    width: 1000px;
+  }
+  .linecube img{
+    width: 700px;
   }
 
 /* FIN BLOCKCHAIN*/
@@ -599,6 +609,9 @@ section {
   .galeria-portada{
     display: inline-grid;
   }
+  .alineado{
+    height: 250px;
+  }
 
 
 /* FIN NEWS*/
@@ -621,6 +634,14 @@ section {
   }
 
 /* FIN EQUILIBRADO */
+
+/* ***************************************
+              WHAT IS BLOCKCHAIN
+    **************************************  */
+    .list-style-benefits img {
+      width: 500px;
+    }
+
 
 
 /* ***************************************
@@ -672,7 +693,7 @@ section {
     letter-spacing: 1.5px;
     }
 
-    .social-list ul li:nth-child(3) img{
+    .social-list ul li:nth-child(2) img{
       width: 35px;
     }
 
@@ -722,17 +743,19 @@ section {
   .trascendiendo-imagen{
     text-align: center;
   }
+  .trascendiendo-imagen{
+    top: 0px;
+  }
 
   /* section 2 */
-  .trascendiendo-identidad::before {
+  .trascendiendo-imagen::before {
     content: '';
-    padding: 170px 130px;
+    padding: 165px 130px;
     background: #f6bd00;
     position: absolute;
     z-index: -1;
-    background-repeat: repeat;
-    right: 60px;
-    top: 1510px;
+    right: 66px;
+    top: -17px;
   }
   
 
@@ -807,18 +830,20 @@ section {
   .cube-blockchain img{
     width: 400px;   
    }
+   .linecube img{
+     width: 350px;
+   }
 
    .graficos-img img{
      width: 330px;
    }
 
-   .trascendiendo-identidad::before {
+   .trascendiendo-imagen::before {
     content: '';
-    padding: 170px 130px;
+    padding: 165px 100px;
     background: #f6bd00;
     position: absolute;
     z-index: -1;
-    top: 1030px;
     right: 15px;
 }
    
@@ -828,17 +853,23 @@ section {
   .cube-blockchain img{
     width: 300px;   
    }
-   .trascendiendo-identidad::before {
+   .trascendiendo-imagen::before {
     content: '';
-    padding: 160px 85px;
+    padding: 165px 100px;
     background: #f6bd00;
     position: absolute;
     z-index: -1;
-    top: 990px;
-    right: 5px;
-}
+    right: 15px;
+  }
+
+  .list-style-benefits img {
+    width: 300px;
+  }
+
 
 }
+
+
 
 @media (orientation: landscape) and (max-width: 820px) {
   .transformacion-digital{
@@ -862,14 +893,25 @@ section {
     color: white;
   }
 
-  .trascendiendo-identidad::before {
+  .trascendiendo-imagen::before {
     content: '';
-    padding: 220px 130px;
+    padding: 175px 130px;
     background: #f6bd00;
     position: absolute;
     z-index: -1;
     right: 170px;
-    top: 805px;
+    top: -25px;
   }
+
+  .colaboracion-item-1::after {
+    content: '';
+    padding: 150px 115px;
+    background: #88a7a6;
+    position: absolute;
+    z-index: -1;
+    left: -80px;
+    top: -45px;
+    background-repeat: repeat;
+    }
 
 }
