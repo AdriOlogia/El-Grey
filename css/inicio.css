@@ -203,6 +203,17 @@ section {
     cursor: pointer;
   }
 
+  #NavMenu ul li a:active{
+    font-weight: bolder;
+  }
+  #NavMenu ul li a.active{
+    font-weight: bolder;
+  }
+
+  .navbar-toggler{
+    order: -1;
+  }
+
   
 
   

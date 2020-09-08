@@ -7,8 +7,9 @@ HEADER
   <div class="container-fluid">
     <!-- BRAND -->
     <nav id="mainNav" class="navbar navbar-expand-md">
-      <a href="#" class="navbar-brand"><img class="img-fluid" width="145" src="../../imgs/el-grey-id.png" alt="El Grey ID"></a>
-    <!-- FIN DEL BRAND -->
+      <a href="#" class="navbar-brand"><img class="img-fluid" width="145" src="../../imgs/el-grey-id.png"
+          alt="El Grey ID"></a>
+      <!-- FIN DEL BRAND -->
       <!-- boton dol movil -->
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menuMobil">
         <i class="fas fa-bars fa-2x"></i>
@@ -26,10 +27,11 @@ HEADER
             <a class="nav-link" href="what-we-do">What we do</a>
           </li>
           <li class="nav-item dropdown mr-lg-3">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blockchain</a>
-            
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">Blockchain</a>
+
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              
+
               <a class="dropdown-item" href="what-is-blockchain">What is BlockChain</a>
               <div class="dropdown-divider"></div>
 
@@ -54,3 +56,14 @@ HEADER
     </nav>
   </div>
 </header>
+
+<script type="text/javascript">
+  const currentLocation = location.href;
+  const menuItem = document.querySelectorAll('a');
+  const menuLength = menuItem.length
+  for (let i = 0; i < menuLength; i++) {
+    if (menuItem[i].href === currentLocation) {
+      menuItem[i].className = "active nav-link"
+    }
+  }
+</script>
