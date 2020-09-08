@@ -1,10 +1,14 @@
 :root {
 	--background--main--bg: white;
 	--font--helvetica: helvetica;
-	--font-cormorant: cormorant;
+	--font--helvetica-normal: helvetica-normal;
+	--font--helvetica-roman: helvetica-roman;
+	--font-cormorant: cormorant-garamont-italic;
+	--font-cormorant-garamond-light-italic: cormorant-garamond-light-italic;
 	--font-opensans: opensans;
-  
-  
+	--font-opensans-light: opensans-light;
+	--background--salmon: #faf9f4;
+	--font-cormorant-regular:cormorant-garamond-regular
   }
   
   
@@ -12,15 +16,19 @@
   FONTS
   **********/
   @font-face{
-	font-family: helvetica;
+	font-family: helvetica-normal;
 	src: url("../fonts/HelveticaNeue.ttc");
+  }
+  @font-face{
+	font-family: helvetica-roman;
+	src: url("../fonts/HelveticaNeueLTStd-Roman.otf");
   }
   @font-face{
 	font-family: helvetica;
 	src: url("../fonts/HelveticaNeueLTStd-Bd.otf")
   }
   @font-face{
-	font-family: cormorant;
+	font-family: cormorant-regular;
 	src: url("../fonts/Cormorant-Regular.ttf");
   }
   @font-face{
@@ -28,15 +36,15 @@
 	src: url("../fonts/CormorantGaramond-BoldItalic.ttf");
   }
   @font-face{
-	font-family: cormorant;
+	font-family: cormorant-garamont-italic;
 	src: url("../fonts/CormorantGaramond-Italic.ttf");
   }
   @font-face{
-	font-family: cormorant;
+	font-family: cormorant-garamond-light-italic;
 	src: url("../fonts/CormorantGaramond-LightItalic.ttf");
   }
   @font-face{
-	font-family: cormorant;
+	font-family: cormorant-garamond-regular;
 	src: url("../fonts/CormorantGaramond-Regular.ttf");
   }
   @font-face{
@@ -48,7 +56,7 @@
 	src: url("../fonts/OpenSans-Bold.ttf");
   }
   @font-face{
-	font-family: opensans;
+	font-family: opensans-light;
 	src: url("../fonts/OpenSans-Light.ttf");
   }
   @font-face{
@@ -83,17 +91,16 @@
   **********/
   a {
 	color: black;
-	transition: text-shadow .3s;
   }
-  a:hover {
-	color: grey;
-	font-weight: bolder;
-	transition: color .3s ease;
-	
-  }
+  
   a:hover, a:hover:visited {
-	color: #5ed1ef;
+	color: black;
+	font-weight: bolder;
 	text-decoration: none !important;
+  }
+  
+  a:active{
+	font-weight: bolder !important;
   }
   
   ul,
@@ -103,13 +110,24 @@
 	margin: 0 !important;
   }
   
+  ul li.active a{
+	font-weight: bolder !important;
+  }
+   
+  .w-60 {
+	  width: 60% !important;
+  }
+  
+  
+  
   /**********
   TITLES
   **********/
   h1 {
 	font-family: var(--font--helvetica), Verdana, Geneva, Tahoma, sans-serif;
 	font-weight: normal;
-	font-weight: 600
+	font-weight: 600;
+	color: #002451;
   }
   
   h2,
@@ -118,11 +136,16 @@
   h5 {
 	font-family: var(--font--helvetica), Verdana, Geneva, Tahoma, sans-serif;
 	font-weight: normal;
+	color: #002451;
   }
   
   p {
-	font-family: var(--font--helvetica);
-	font-style: italic;
+	font-family: var(--font-opensans-light);
+  }
+  
+  .btn{
+	padding: 20px 30px;
+	border-radius: 0px;
   }
   
   
@@ -145,8 +168,824 @@
 	  Navbar navegacion
 	************* */
 	#NavMenu{
-	  background-color: var(--background--main--bg);
+	  background-color: transparent;
 	}
 	#mainNav .loGoo{
 	  width: 100px;
 	}
+	.navbar-brand h3{
+	  font-family: var(--font-opensans-light);
+	  font-style: normal;
+	}
+	
+	#NavMenu ul li a{
+	  font-family: var(--font-cormorant);
+	  color: #282828;
+	  font-size: 18px;
+	}
+	.idiomas a{
+	  font-size: 13px !important;
+	  padding-top: 11px;
+	}
+	.dropdown-menu{
+	  border: white;
+	}
+	.dropdown-menu a{
+	  font-size: 15px !important;
+	}
+	.dropdown-toggle::after{
+	  display: none;
+	}
+	.dropdown-item.active, .dropdown-item:active{
+	  background-color: white;
+	}
+	.collapse ul li:nth-child(4){
+	  cursor: pointer;
+	}
+  
+	
+  
+	
+  
+  
+  /* ***********
+	  Section I  TRANSFORMACION DIGITAL
+	************* */
+	.transformacion-digital{
+	  margin-left: -15px;
+	  margin-right: -15px;
+	}
+	.transformacion-digital-items2 p{
+	  font-family: var(--font-cormorant-garamond-light-italic);
+	  line-height: 2rem;
+	  color: #282828;
+	}
+	.transformacion-digital{
+	  background: url("../imgs/Recurso\ 2@2x.png");
+	  background-size: cover;
+	  min-height: 100vh;
+	}
+  
+	.transformacion-digital::after{
+	  content: 'PH LAURA FERRO';
+	  position: absolute;
+	  font-size: 8px;
+	  bottom: 10px;
+	  right: 40px;
+	  color: white;
+	  letter-spacing: 2px;
+	}
+  
+	
+  
+  
+  /* ***********
+	  Section II TRASCENDENCIA IDENTIDAD
+	************* */
+	.trascendiendo-titulo h3{
+	  color: #002451;
+	}
+	.trascendiendo-imagen::before {
+	  content: '';
+	  padding: 234px 130px;
+	  background: #f6bd00;
+	  position: absolute;
+	  z-index: -1;
+	  right: -100px;
+	  top: -45px;
+	}
+  
+	.trascendiendo-imagen::after{
+	  content: 'ARY BRIZZI';
+	  font-size: 8px;
+	  font-family: var(--font--helvetica-regular);
+	}
+  
+	.trascendiendo-parrafo p{
+	  font-family: var(--font-opensans-light);
+	  font-style: normal;
+	  color: #282828;
+	  font-size: 18px;
+	}
+	.trascendiendo-parrafo{
+	  padding: 0% 2%;
+	}
+  
+	.trascendiendo-imagen img{
+	  width: 400px;
+	}
+	.trascendiendo-imagen{
+	  top: -100px;
+	}
+  
+	@media screen and (max-width: 768px){
+	  .trascendiendo-titulo h3{
+		margin-left: 0;
+	  }
+	  .trascendiendo-imagen img{
+		width: 300px;
+	  }
+	}
+  
+  
+  /* ***********
+	  Section III  COMO CERTIFICARLOS
+	************* */  
+	.como-certific{
+	  background: url("../imgs/Recurso\ 3.png");
+	  background-repeat: no-repeat;
+	  background-position: center;
+	  background-size: 650px;
+	  background-position-y: 85px;
+	}
+  
+	.certific-item-1 img{
+	  width: 400px;
+	}
+  
+	.como-certific-items{
+	  background: white;
+	  padding: 5%;
+	}
+	.como-certific-items p{
+	  font-family: var(--font-opensans-light);
+	  font-style: normal;
+	  color: #282828;
+	}
+	
+  
+  
+  /* ***********
+	  Section IV  BENEFICIOS
+	************* */
+	.beneficios .media-body p{
+	  font-family: var(--font-opensans-light);
+	  font-style: normal;
+	  color: #282828;
+	}
+  
+	.media img{
+	  width: 50px;
+	  height: 50px;
+	}
+	.beneficios{
+	  background: var(--background--salmon);
+	}
+  
+	.beneficios .media img{
+	  opacity: 0.5;
+	}
+	
+	.btn {
+		padding: 10px 30px;
+	}
+	
+	.btn-outline-dark {
+		color: #002451;
+		border-color: #002451;
+	}
+	
+	.btn-enter-asset-id {
+	  color: #595959;
+	  border-color: rgb(89, 89, 89,0.2);
+	  font-family: var(--font-opensans-light);
+	  letter-spacing: 2px;
+	  padding: 10px 20px;
+	}
+	
+	.flecha-der {
+	  height: 23px;
+	  width: 24px;
+	  margin-left: 3rem;
+	  fill: #595959;
+	}
+	
+	.btn-outline-secondary:hover .flecha-der {
+	   fill: #fff;
+	}
+  
+   /* *************
+		SECTION V colaboracion
+	  *****************/
+	.colaboracion-item-1::after{
+	  content: '';
+	  padding: 300px 115px;
+	  background: #88a7a6;
+	  position: absolute;
+	  z-index: -1;
+	  left: -80px;
+	  top: -70px;
+	  background-repeat: repeat;
+	}
+  
+	.colaboracion-item-1{
+	  background: white;
+	  padding: 5%;
+	}
+	.colaboracion-item-2{
+	  padding: 5%;
+	}
+  
+	.colaboracion-item-1 p{
+	  font-family: var(--font-opensans-light);
+	  font-style: normal;
+	  padding: 5% 10%;
+	  color: #282828;
+	}
+	
+	.colaboracion-item-2 ul li{
+	  font-family: var(--font-opensans-light);
+	  padding-left: 15px !important;
+	  color: #282828;
+	}
+  
+  
+  
+  
+	
+  /* *************
+		Grande - galeria
+	  *****************/
+  
+	.galeria-grande .flex-column {
+	  max-width: 500px;
+	}
+	
+	.exampleImg {
+		margin: 5px;
+	}
+	
+	.scale {
+		transform: scaleY(1.05);
+		padding-top: 5px; 
+	}
+  
+	  .artist-name1::before, 
+	  .artist-name2::before, 
+	  .artist-name3::before, 
+	  .artist-name4::before {
+		  font-size: 10px;
+		  position: relative;
+		  white-space: pre;
+		  background-color: white;
+		  color: #595959;
+		  font-family: var(--font-opensans-light);
+	  }
+  
+  
+	.artist-name1::before{
+	  content:"NOMBRE \A GALERIA";
+	  left: -70px;
+	  bottom: -45px;
+	}
+	.artist-name2::before{
+	  content:"NOMBRE \A GALERIA";
+	  top: 50px;
+	  left: -70px;
+	}
+	.artist-name3::before{
+	  content:"EDUARDO  \A BASALDO";
+	  left: 500px;
+	  top: 45px;
+	}
+	.artist-name4::before{
+	  content:"NOMBRE \A GALERIA";
+	  left: 500px;
+	  top: 40px;
+	  z-index: 1;
+	}
+  
+	@media screen and (max-width: 576px){
+	  .artist-name1::before, 
+	  .artist-name2::before, 
+	  .artist-name3::before, 
+	  .artist-name4::before{
+		position: inherit;
+		
+	  }
+	}
+  
+	
+  
+  
+  /* *************
+		FORMULARIO
+	  *****************/ 
+	.formulario-no-bg,
+	.formulario-no-bg input{
+	  background: #fff !important;
+	}
+  
+	.formulario {
+	  background: var(--background--salmon);
+	}
+	.formulario p{
+	  font-family: var(--font-opensans-light);
+	  font-style: normal;
+	  color: #282828;
+	}
+  
+	.formulario input{
+	  border: none;
+	  border-bottom: 2px solid #DCDBD7;
+	  border-radius: 0px;
+	  font-family: var(--font--helvetica-normal);
+	  background: var(--background--salmon);
+	  color: #282828;
+	  font-size: 13px;
+	  letter-spacing: 2px;
+	}
+	
+	.form-control {
+		padding: .375rem 0;
+	}
+  
+  
+  /* *************
+		Pequeña galeria
+	  *****************/
+	.peque-galeria-items img{
+	  width: 450px;
+	}
+  
+	.min-galeria-content p{
+	  font-family: var(--font-cormorant-regular);
+	  font-style: normal;
+	  font-size: 20px;
+	  color: #424242;
+	}
+	
+	.min-galeria-content h5 {
+		color: #424242;
+	}
+	.min-galeria a{
+	  color: #002451;
+	  font-family: var(--font--helvetica);
+	}
+  
+  /* FIN DEL INICIO / HOME */
+  
+  
+  
+  /* ***************************************
+				INICIO DE ARTE
+	  **************************************  */
+	.arte-galeria h3{
+	  font-family: var(--font--helvetica-roman);
+	  color: #595959;
+	}
+	
+	.arte-galeria h5{
+	  font-family: var(--font-cormorant-garamond-light-italic);
+	  color: #424242;
+	}
+	
+	.arte-galeria p {
+	color: #424242;
+	font-size: 20px;
+	}
+  
+	.arte-galeria button{
+	  font-family: var(--font-opensans-light);
+	}
+	
+	.flecha-btn {
+	  display: flex;
+	  align-items: center;
+	  letter-spacing: 3px;
+	  color: #424242;
+	  font-size: 14px;
+	  font-family: var(--font-opensans-light);
+	}
+	
+	.flecha-btn img{
+	  width: 30px;
+	  margin-right: 10px;
+	}
+	
+	a.flecha-btn:hover {
+	  color: #8888;
+  }
+  
+  
+  /* FIN ARTE*/
+  
+  
+  /* ***************************************
+				INICIO DE PURPOSE
+	  **************************************  */
+	  .purpose-img::after{
+		content: 'AGUSTINA BOTTONI';
+		font-family: var(--font--helvetica-roman);
+		color: #282828;
+		letter-spacing: 2px;
+		position: absolute;
+		bottom: -35px;
+		font-size: 8px;
+		right: 10px;
+	  }
+	  
+	  .purpose-text p {
+		  color: #424242;
+	  }
+	  
+	  @media screen and (max-width: 576px){
+		.purpose-img::after{
+		  content: '';
+		}
+		.purpose-img::before{
+		  content: 'AGUSTINA BOTTONI';
+		  font-size: 8px;
+		  font-family: var(--font--helvetica-roman);
+		  letter-spacing: 2px;
+		  color: #282828;
+		}
+		.purpose-text{
+		  margin-bottom: 1.5rem!important;
+		  margin-top: 1.5rem!important;
+		}
+	  }
+	
+	/* FIN ARTE*/
+  
+  /* ***************************************
+				INICIO DE BLOCKCHAIN
+	  **************************************  */
+	.blockchain-item img{
+	  width: 70%;
+	}
+	  .strengths-of-blockchain p {
+		  color: #424242;
+		  font-size: 9px;
+		  letter-spacing: 1px;
+		  font-family: var(--font--helvetica-roman);
+		  height: 35px;
+	  }
+  
+	  .strengths-of-blockchain h5 {
+		  color: #084b7a;
+		  font-family: var(--font--helvetica);
+	  }
+  
+	.blockchain-item-presentation p{
+	  font-size: 10px;
+	  font-weight: bold;
+	}
+	.blockchain-item-ul ul li{
+	  font-family: var(--font-opensans-light);
+	}
+  
+	.lista-desordenada ul{
+	  padding-left: 30px !important;
+	  margin-top: 50px !important;
+	}
+	.lista-desordenada ul li{
+	  margin: 20px !important;
+	  font-family: var(--font-opensans-light);
+	  color: #424242;
+	}
+	.media img{
+	  height: 65px;
+	}
+	.media-flecha-list .media,
+	.media-flecha-list .media h5{
+	  color: #402ea3;
+	  font-family: var(--font-opensans-light);
+	}
+	.media-flecha-list p:last-child{
+	  color: #402ea3;
+	  font-family: var(--font-opensans-light);
+	}
+  
+	.linecube img{
+	  width: 60%;
+	}
+  
+  /* FIN BLOCKCHAIN*/
+  
+  /* ***************************************
+				 HOW IS CERTIFICATE
+	  **************************************  */
+	.list-numeration ol li{
+	  list-style: decimal !important;
+	  font-family: var(--font-opensans-light);
+	}
+   
+  
+  /* FIN HOW IS CERTIFICATE*/
+  
+  /* ***************************************
+				INICIO DE NEWS
+	  **************************************  */
+	.author-news{
+	  font-style: italic;
+	}
+	.galeria-portada{
+	  display: inline-grid;
+	}
+	.alineado{
+	  height: 250px;
+	}
+  
+  
+  /* FIN NEWS*/
+  
+  /* ***************************************
+				INICIO DE EQUILIBRADO
+	  **************************************  */
+  
+	.margin-top{
+	  min-height: 30vh;
+	  margin-top: 100px;
+	}
+  
+	.bkg-equilibrado{
+	  padding: 50px 10px 100px 100px;
+	  background: #084b7a;
+	}
+	.bkg-equilibrado h1{
+	  color: white;
+	}
+  
+  /* FIN EQUILIBRADO */
+  
+  /* ***************************************
+				WHAT IS BLOCKCHAIN
+	  **************************************  */
+	  .list-style-benefits img {
+		width: 600px;
+	  }
+  
+	  
+	  .WWD-content p {
+		  color: #424242;
+	  }
+  
+  
+  
+  /* ***************************************
+				WHAT IS BLOCKCHAIN
+	  **************************************  */
+  
+	  .graficos-img p{
+		color: #084b7a;
+		font-size: 10px;
+		letter-spacing: 1px;
+		font-family: var(--font--helvetica-roman);
+		margin-bottom: 2rem;
+	  }
+  
+	  .list-style-benefits .table-responsive img{
+		width: 30px;
+	  }
+  
+  
+  
+  
+  
+  /* ***************************************
+				INICIO DE NEWS
+	  **************************************  */
+	.news-articles img{
+	  width: 300px;
+	}
+  
+	.bkg-novedades {
+	  padding: 50px 10px 50px 100px;
+	}
+  
+	.pequeña-galeria small {
+	  font-size: 50%;
+	  margin-top: 10px;
+	  color: #595959;
+	}
+  
+  /* FIN DE NEWS */
+  
+  
+  /* ***************************************
+				INICIO FORMULARIO
+	  **************************************  */
+  
+	  .form-control:focus{
+		background-color: unset;
+	  }
+	
+  
+	/* *************
+		FOOTER
+	  *****************/
+	.footer .terminos-politica a{
+	  font-family: var(--font-opensans-light);
+	}
+	
+  
+	.terminos-politica ul li{
+	  margin: 05px !important;
+	  letter-spacing: 1.5px;
+	  }
+  
+	  .social-list ul li:nth-child(2) img{
+		width: 35px;
+	  }
+  
+  /* FIN DEL FOOTER */
+  
+	
+	/* carrusel configuracion */
+	.pista-carrusel{
+	  display:none;
+	  visibility: hidden;
+	} 
+  
+  
+  
+	/* *************
+		inicio del edia mediaQuery
+	  *****************/
+  @media screen and (max-width: 768px){
+  
+	/* head */
+	header .container-fluid{
+	  background-color: white !important;
+	}
+  
+	/* carrusel */
+	.pista-carrusel{
+	  display: block;
+	  visibility: visible;
+	  text-align: center;
+	}
+	.sin-carrusel{
+	  display: none;
+	  visibility: hidden;
+	}
+  
+	/*section 1 */
+	.transformacion-digital{
+	  padding-top: 100px;
+	}
+	.transformacion-digital-items2 p{
+	  padding-left: 20px;
+	}
+	.transformacion-digital-items2 p{
+	  padding-left: 20px;
+	}
+	
+	.trascendiendo-imagen{
+	  text-align: center;
+	}
+	.trascendiendo-imagen{
+	  top: 0px;
+	}
+  
+	/* section 2 */
+	.trascendiendo-imagen::before {
+	  content: '';
+	  padding: 165px 130px;
+	  background: #f6bd00;
+	  position: absolute;
+	  z-index: -1;
+	  right: 66px;
+	  top: -17px;
+	}
+	
+  
+	/* section 3 */
+	
+	.como-certific {
+	  background-position-y: 305px;
+  }
+	.como-certific-items{
+	  margin-top: 200px;
+	}
+	
+	
+	
+	/* section 4 */
+	.beneficios-titulo{
+	  padding-left: 35px;
+	}
+  
+	/* section 5 */
+  
+	.colaboracion-item-2{
+	  margin-top: 50px;
+	}
+	.colaboracion-item-1::after{
+	  padding: 190px 80px;
+	}
+  
+	/* formulario */
+	.bkg-novedades{
+	  padding: 0;
+	}
+	.margin-top{
+	  margin-top: 80px;
+	}
+  
+  
+	/* ARTE */
+	.arte-galeria-img img{
+	 width: 300px; 
+	}
+  
+	/* footer */
+	.separador{
+	  display: none;
+	}
+	.terminos-politica ul{
+	  flex-direction: column!important;
+	}
+  
+	
+  }
+  
+  @media screen and (max-width: 476px){
+  
+	.trascendiendo-parrafo{
+	  order: 1;
+	}
+  
+	.como-certific{
+	  background-position-y: 480px;
+	}
+  
+	 .linecube img{
+	   width: 100%;
+	 }
+  
+	 .trascendiendo-imagen::before {
+	  content: '';
+	  padding: 165px 100px;
+	  background: #f6bd00;
+	  position: absolute;
+	  z-index: -1;
+	  right: 15px;
+  }
+	 
+  }
+  
+  @media screen and (max-width: 380px){
+	 .trascendiendo-imagen::before {
+	  content: '';
+	  padding: 165px 100px;
+	  background: #f6bd00;
+	  position: absolute;
+	  z-index: -1;
+	  right: 15px;
+	}
+  
+	.list-style-benefits img {
+	  width: 300px;
+	}
+  
+  
+  }
+  
+  
+  /* horizontal MEDIA */
+  @media (orientation: landscape) and (max-width: 820px) {
+	.transformacion-digital{
+	  margin-top: 60px;
+	  
+	}
+	.separador{
+	  display: none;
+	}
+  
+	.sin-carrusel{
+	  text-align: center;
+	}
+  
+	.transformacion-digital::after {
+	  content: 'PH LAURA FERRO';
+	  position: absolute;
+	  font-size: 12px;
+	  bottom: 5px;
+	  right: 40px;
+	  color: white;
+	}
+  
+	.trascendiendo-imagen::before {
+	  content: '';
+	  padding: 175px 130px;
+	  background: #f6bd00;
+	  position: absolute;
+	  z-index: -1;
+	  right: 170px;
+	  top: -25px;
+	}
+  
+	.colaboracion-item-1::after {
+	  content: '';
+	  padding: 150px 115px;
+	  background: #88a7a6;
+	  position: absolute;
+	  z-index: -1;
+	  left: -80px;
+	  top: -45px;
+	  background-repeat: repeat;
+	  }
+  
+  }

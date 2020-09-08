@@ -9,8 +9,6 @@
   --font-opensans-light: opensans-light;
   --background--salmon: #faf9f4;
   --font-cormorant-regular:cormorant-garamond-regular
-
-
 }
 
 
@@ -116,9 +114,9 @@ ul li.active a{
   font-weight: bolder !important;
 }
  
-
-
-
+.w-60 {
+	width: 60% !important;
+}
 
 
 
@@ -257,8 +255,7 @@ section {
     top: -45px;
   }
 
-  .trascendiendo-imagen::after{
-    content: 'ARY BRIZZI';
+  .trascendiendo-imagen span{
     font-size: 8px;
     font-family: var(--font--helvetica-regular);
   }
@@ -338,9 +335,36 @@ section {
     opacity: 0.5;
   }
   
+  .btn {
+	  padding: 10px 30px;
+  }
+  
   .btn-outline-dark {
 	  color: #002451;
-	  border-color: #002451;
+	  border-color: rgb(0, 36, 81,0.2);
+  }
+  
+  .btn-outline-dark:hover {
+	  color: white !important;
+  }
+  
+  .btn-enter-asset-id {
+	color: #595959;
+	border-color: rgb(89, 89, 89,0.2);
+    font-family: var(--font-opensans-light);
+	letter-spacing: 2px;
+	padding: 10px 20px;
+  }
+  
+  .flecha-der {
+    height: 23px;
+    width: 24px;
+    margin-left: 3rem;
+	fill: #595959;
+  }
+  
+  .btn-outline-secondary:hover .flecha-der {
+	 fill: #fff;
   }
 
  /* *************
@@ -423,7 +447,7 @@ section {
     left: -70px;
   }
   .artist-name3::before{
-    content:"EDUARDO  \A BASALDO";
+    content:"EDUARDO \A BASALDO";
     left: 500px;
     top: 45px;
   }
@@ -439,8 +463,8 @@ section {
 	.artist-name2::before, 
 	.artist-name3::before, 
 	.artist-name4::before{
-      position: inherit;
-      
+		position: inherit;
+	    white-space: initial;
     }
   }
 
@@ -450,6 +474,10 @@ section {
 /* *************
       FORMULARIO
     *****************/ 
+  .formulario-no-bg,
+  .formulario-no-bg input{
+	background: #fff !important;
+  }
 
   .formulario {
     background: var(--background--salmon);
@@ -462,13 +490,17 @@ section {
 
   .formulario input{
     border: none;
-    border-bottom: 1px solid #282828;
+    border-bottom: 2px solid #DCDBD7;
     border-radius: 0px;
     font-family: var(--font--helvetica-normal);
     background: var(--background--salmon);
     color: #282828;
     font-size: 13px;
     letter-spacing: 2px;
+  }
+  
+  .form-control {
+	  padding: .375rem 0;
   }
 
 
@@ -502,13 +534,17 @@ section {
               INICIO DE ARTE
     **************************************  */
   .arte-galeria h3{
-    font-family: var(--font-opensans-light);
-    color: black;
+    font-family: var(--font--helvetica-roman);
+    color: #595959;
   }
   
   .arte-galeria h5{
     font-family: var(--font-cormorant-garamond-light-italic);
-    color: black;
+    color: #424242;
+  }
+  
+  .arte-galeria p {
+	color: #424242;
   }
 
   .arte-galeria button{
@@ -519,8 +555,8 @@ section {
 	display: flex;
     align-items: center;
     letter-spacing: 3px;
-    color: #8888;
-    font-size: 13px;
+    color: #424242;
+    font-size: 14px;
 	font-family: var(--font-opensans-light);
   }
   
@@ -542,20 +578,29 @@ section {
     **************************************  */
     .purpose-img::after{
       content: 'AGUSTINA BOTTONI';
-      font-family: var(--font-opensans-light);
+      font-family: var(--font--helvetica-roman);
+	  color: #282828;
+	  letter-spacing: 2px;
       position: absolute;
       bottom: -35px;
-      font-size: 12px;
+      font-size: 8px;
       right: 10px;
     }
+	
+	.purpose-text p {
+		color: #424242;
+	}
+	
     @media screen and (max-width: 576px){
       .purpose-img::after{
         content: '';
       }
       .purpose-img::before{
         content: 'AGUSTINA BOTTONI';
-        font-size: 12px;
-        font-family: var(--font-opensans-light);
+        font-size: 8px;
+        font-family: var(--font--helvetica-roman);
+		letter-spacing: 2px;
+		color: #282828;
       }
       .purpose-text{
         margin-bottom: 1.5rem!important;
@@ -571,21 +616,35 @@ section {
   .blockchain-item img{
     width: 70%;
   }
+	.strengths-of-blockchain p {
+		color: #424242;
+		font-size: 9px;
+		letter-spacing: 1px;
+		font-family: var(--font--helvetica-roman);
+		height: 35px;
+	}
+
+	.strengths-of-blockchain h5 {
+		color: #084b7a;
+		font-family: var(--font--helvetica);
+	}
+
   .blockchain-item-presentation p{
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
   }
   .blockchain-item-ul ul li{
     font-family: var(--font-opensans-light);
   }
 
-  .lista-desordenada ul ul{
+  .lista-desordenada ul{
     padding-left: 30px !important;
     margin-top: 50px !important;
   }
-  .lista-desordenada ul ul li{
+  .lista-desordenada ul li{
     margin: 20px !important;
     font-family: var(--font-opensans-light);
+	color: #424242;
   }
   .media img{
     height: 65px;
@@ -600,11 +659,8 @@ section {
     font-family: var(--font-opensans-light);
   }
 
-  .cube-blockchain img{
-    width: 1000px;
-  }
   .linecube img{
-    width: 700px;
+    width: 60%;
   }
 
 /* FIN BLOCKCHAIN*/
@@ -662,15 +718,10 @@ section {
       width: 600px;
     }
 
-    .WWD-content{
-      padding-left: 50px;
-    }
-
-    @media screen and (max-width:576px){
-      .WWD-content{
-        padding-left: 0px;
-      }
-    }
+	
+	.WWD-content p {
+		color: #424242;
+	}
 
 
 
@@ -678,8 +729,12 @@ section {
               WHAT IS BLOCKCHAIN
     **************************************  */
 
-    .graficos-img{
-      color: #402ea3;
+    .graficos-img p{
+      color: #084b7a;
+	  font-size: 10px;
+	  letter-spacing: 1px;
+	  font-family: var(--font--helvetica-roman);
+	  margin-bottom: 2rem;
     }
 
     .list-style-benefits .table-responsive img{
@@ -780,10 +835,8 @@ section {
   }
   
   .trascendiendo-imagen{
-    text-align: center;
-  }
-  .trascendiendo-imagen{
     top: 0px;
+	margin-bottom: 3rem;
   }
 
   /* section 2 */
@@ -822,16 +875,8 @@ section {
   .colaboracion-item-1::after{
     padding: 190px 80px;
   }
-  
-
-  /* what is blockchain */
-  .cube-blockchain img{
-   width: 700px;   
-  }
-
-
-
-  /* formulario */
+ 
+  /* formulario */ 
   .bkg-novedades{
     padding: 0;
   }
@@ -866,15 +911,8 @@ section {
     background-position-y: 480px;
   }
 
-  .cube-blockchain img{
-    width: 400px;   
-   }
    .linecube img{
-     width: 350px;
-   }
-
-   .graficos-img img{
-     width: 330px;
+     width: 100%;
    }
 
    .trascendiendo-imagen::before {
@@ -889,9 +927,6 @@ section {
 }
 
 @media screen and (max-width: 380px){
-  .cube-blockchain img{
-    width: 300px;   
-   }
    .trascendiendo-imagen::before {
     content: '';
     padding: 165px 100px;
