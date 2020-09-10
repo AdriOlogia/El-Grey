@@ -212,8 +212,23 @@ section {
 
   .navbar-toggler{
     order: -1;
+    background: url("../imgs/menu.svg");
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+  }
+  .navbar-toggler.cambio{
+    order: -1;
+    background: url("../imgs/cruz-menu.svg");
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-position-y: center;
   }
 
+  /* .navbar-toggler img{
+    width: 40px;
+  }
+ */
   
 
   
@@ -709,7 +724,7 @@ section {
 
   .margin-top{
     min-height: 30vh;
-    margin-top: 100px;
+    margin-top: 40px;
   }
 
   .bkg-equilibrado{

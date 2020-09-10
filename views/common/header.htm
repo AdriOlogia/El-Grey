@@ -11,8 +11,8 @@ HEADER
           alt="El Grey ID"></a>
       <!-- FIN DEL BRAND -->
       <!-- boton dol movil -->
-      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menuMobil">
-        <i class="fas fa-bars fa-2x"></i>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menuMobil" id="hamburguesa">
+        
       </button>
       <!-- menu desktop -->
       <div class="collapse navbar-collapse" id="menuMobil">
@@ -32,7 +32,7 @@ HEADER
 
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-              <a class="dropdown-item" href="what-is-blockchain">What is BlockChain</a>
+              <a class="dropdown-item" href="what-is-blockchain">What is Blockchain</a>
               <div class="dropdown-divider"></div>
 
               <a class="dropdown-item" href="how-is-certificate">How is a certificate created</a>
@@ -65,5 +65,13 @@ HEADER
     if (menuItem[i].href === currentLocation) {
       menuItem[i].className = "active nav-link"
     }
-  }
+  };
+
+  $(function(){
+    $("#hamburguesa").on("click", function(){
+        $("#hamburguesa").toggleClass("cambio")
+    });
+});
 </script>
+
+
