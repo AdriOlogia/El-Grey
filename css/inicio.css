@@ -128,6 +128,7 @@ h1 {
   font-weight: normal;
   font-weight: 600;
   color: #002451;
+  font-size: 2rem;
 }
 
 h2,
@@ -181,11 +182,22 @@ section {
   #NavMenu ul li a{
     font-family: var(--font-cormorant);
 	color: #282828;
-    font-size: 18px;
+    font-size: 19px;
   }
   .idiomas a{
     font-size: 13px !important;
-    padding-top: 11px;
+    padding-top: 14px;
+  }
+  
+  .idiomas .idiomas-separetor{
+    font-family: var(--font-cormorant);
+	padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  
+  
+  .idiomas a:last-child{
+    font-weight: bolder;
   }
   .dropdown-menu{
     border: white;
@@ -206,7 +218,7 @@ section {
   #NavMenu ul li a:active{
     font-weight: bolder;
   }
-  #NavMenu ul li a.active{
+  #NavMenu ul li a.active {
     font-weight: bolder;
   }
 
@@ -648,6 +660,7 @@ section {
 		letter-spacing: 1px;
 		font-family: var(--font--helvetica-roman);
 		height: 35px;
+		line-height: inherit !important;
 	}
 
 	.strengths-of-blockchain h5 {
@@ -747,6 +760,7 @@ section {
 	
 	.WWD-content p {
 		color: #424242;
+		line-height: 28px;
 	}
 
 
@@ -814,7 +828,7 @@ section {
     }
 
     .social-list ul li:nth-child(2) img{
-      width: 35px;
+      width: 32px;
     }
 
 /* FIN DEL FOOTER */
@@ -826,7 +840,9 @@ section {
     visibility: hidden;
   } 
 
-
+	.transformacion-digital-items2 {
+		top: -85px;
+	}
 
   /* *************
       inicio del edia mediaQuery
@@ -924,6 +940,9 @@ section {
     flex-direction: column!important;
   }
 
+	.transformacion-digital-items2 {
+		top: 0;
+	}
   
 }
 

@@ -47,8 +47,7 @@ HEADER
           </li>
           <li class="nav-item mr-0 d-flex idiomas">
             <a class="nav-link" href="#transformacion-digital">Spa </a>
-            <span class="nav-link" style="font-family: var(--font-cormorant); padding-right: 0 !important;
-            padding-left: 0 !important;">/</span>
+            <span class="nav-link idiomas-separetor">/</span>
             <a class="nav-link" href=""> Eng</a>
           </li>
         </ul>
@@ -63,13 +62,18 @@ HEADER
   const menuLength = menuItem.length
   for (let i = 0; i < menuLength; i++) {
     if (menuItem[i].href === currentLocation) {
-      menuItem[i].className = "active nav-link"
+	  menuItem[i].className = "active nav-link";
+	  console.log(menuItem[i].parentNode.parentNode);
+	  if (menuItem[i].parentNode.parentNode.classList.contains('dropdown'))
+	  {
+		menuItem[i].parentNode.parentNode.classList.add("active")
+	  }
     }
   };
 
   $(function(){
     $("#hamburguesa").on("click", function(){
-        $("#hamburguesa").toggleClass("cambio")
+        $("#hamburguesa").toggleClass("cambio");
     });
 });
 </script>
