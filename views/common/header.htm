@@ -63,8 +63,8 @@ HEADER
   for (let i = 0; i < menuLength; i++) {
     if (menuItem[i].href === currentLocation) {
 	  menuItem[i].className = "active nav-link";
-	  console.log(menuItem[i].parentNode.parentNode);
-	  if (menuItem[i].parentNode.parentNode.classList.contains('dropdown'))
+	  console.log(menuItem[i].parentNode.parentNode.firstChild);
+	  if (menuItem[i].parentNode.parentNode.firstChild.classList.contains('dropdown-toggle'))
 	  {
 		menuItem[i].parentNode.parentNode.classList.add("active")
 	  }
