@@ -21,7 +21,7 @@ define("DEFAULT_SITE_TEMPLATE","main_content");
 // El contenido por omisión (su alias).
 define("DEFAULT_CONTENT","inicio"); // Debería ser siempre 'inicio' pero si 'inicio' está protegido, redirige a 'login' en index.php
 
-define("SITE_mainlogo", URL_img."favico.png");
+define("SITE_mainlogo", URL_img."favicon-elgrey.png");
 define("SITE_humans", BASE_URL."humans.txt");
 
 // Siempre cargar estos css

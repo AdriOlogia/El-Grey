@@ -18,37 +18,37 @@ HEADER
       <div class="collapse navbar-collapse" id="menuMobil">
         <ul class="navbar-nav ml-auto" id="mitab">
           <li class="nav-item mr-lg-3">
-            <a class="nav-link" href="<?php echo BASE_URL; ?>art">Art</a>
+            <a class="nav-link" href="<?php echo BASE_URL; ?>art"><?php echo $translate->__tr('header-section-1');?></a>
           </li>
           <li class="nav-item mr-lg-3">
-            <a class="nav-link" href="purpose">Purpose</a>
+            <a class="nav-link" href="purpose"><?php echo $translate->__tr('header-section-2');?></a>
           </li>
           <li class="nav-item mr-lg-3">
-            <a class="nav-link" href="what-we-do">What we do</a>
+            <a class="nav-link" href="what-we-do"><?php echo $translate->__tr('header-section-3');?></a>
           </li>
           <li class="nav-item dropdown mr-lg-3">
             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">Blockchain</a>
+              aria-haspopup="true" aria-expanded="false"><?php echo $translate->__tr('header-section-4');?></a>
 
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-              <a class="dropdown-item" href="what-is-blockchain">What is Blockchain</a>
+              <a class="dropdown-item" href="what-is-blockchain"><?php echo $translate->__tr('header-section-5');?></a>
               <div class="dropdown-divider"></div>
 
-              <a class="dropdown-item" href="how-is-certificate">How is a certificate created</a>
+              <a class="dropdown-item" href="how-is-certificate"><?php echo $translate->__tr('header-section-6');?></a>
             </div>
           </li>
 
           <li class="nav-item mr-lg-3">
-            <a class="nav-link" href="<?php echo BASE_URL; ?>news">News</a>
+            <a class="nav-link" href="<?php echo BASE_URL; ?>news"><?php echo $translate->__tr('header-section-7');?></a>
           </li>
           <li class="nav-item mr-lg-3">
-            <a class="nav-link" href="contact">Contact</a>
+            <a class="nav-link" href="contact"><?php echo $translate->__tr('header-section-8');?></a>
           </li>
           <li class="nav-item mr-0 d-flex idiomas">
-            <a class="nav-link" href="#transformacion-digital">Spa </a>
+            <a class="nav-link" href="#" data-lang="esp"><?php echo $translate->__tr('header-section-9');?> </a>
             <span class="nav-link idiomas-separetor">/</span>
-            <a class="nav-link" href=""> Eng</a>
+            <a class="nav-link" href="#" data-lang="eng"> <?php echo $translate->__tr('header-section-10');?></a>
           </li>
         </ul>
       </div>
@@ -61,21 +61,53 @@ HEADER
   const menuItem = document.querySelectorAll('a');
   const menuLength = menuItem.length
   for (let i = 0; i < menuLength; i++) {
-    if (menuItem[i].href === currentLocation) {
+    if (menuItem[i].href === currentLocation && window.location.pathname != '/') {
 	  menuItem[i].className = "active nav-link";
-	  console.log(menuItem[i].parentNode.parentNode.firstChild);
-	  if (menuItem[i].parentNode.parentNode.firstChild.classList.contains('dropdown-toggle'))
+	  if (menuItem[i].parentNode.nodeName === 'DIV')
 	  {
-		menuItem[i].parentNode.parentNode.classList.add("active")
+		document.getElementById('navbarDropdown').classList.add("active");
 	  }
     }
   };
 
-  $(function(){
-    $("#hamburguesa").on("click", function(){
-        $("#hamburguesa").toggleClass("cambio");
-    });
-});
+	const cookie = getCookie('language');
+	if(cookie != "")
+		$('a[data-lang="'+cookie+'"]').addClass('active');
+	else
+		$('a[data-lang="eng"]').addClass('active');
+	
+	$(function(){
+		$("#hamburguesa").on("click", function(){
+			$("#hamburguesa").toggleClass("cambio");
+		});
+		
+		$('.idiomas a').on('click', function(e){
+			setCookie('language',$(this).data('lang'),365);
+			location.reload();
+		});
+	});
+	
+	function setCookie(cname, cvalue, exdays) {
+	  var d = new Date();
+	  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+	  var expires = "expires="+d.toUTCString();
+	  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	}
+
+	function getCookie(cname) {
+	  var name = cname + "=";
+	  var ca = document.cookie.split(';');
+	  for(var i = 0; i < ca.length; i++) {
+		var c = ca[i];
+		while (c.charAt(0) == ' ') {
+		  c = c.substring(1);
+		}
+		if (c.indexOf(name) == 0) {
+		  return c.substring(name.length, c.length);
+		}
+	  }
+	  return "";
+	}
 </script>
 
 

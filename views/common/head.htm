@@ -1,3 +1,11 @@
+<?php 
+require_once(DIR_includes.'class.translate.inc.php');
+
+if(isset($_COOKIE["language"]) && in_array(strtolower($_COOKIE["language"]), array('esp','eng')))
+	$translate = new Translator(strtolower($_COOKIE["language"]));
+else
+	$translate = new Translator('eng');
+?>
 <!DOCTYPE html>
 <html>
 

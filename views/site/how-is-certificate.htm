@@ -2,54 +2,35 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 my-5">
-        <h1>How is a certificate created</h1>
+        <h1><?php echo $translate->__tr('how-is-certificate-title');?></h1>
       </div>
       <div class="col-lg-11 offset-lg-1 WWD-content my-2">
-        <p>
-          Basically, we encrypt the information of the certificate of
-          authenticity, we get a hash as a result of that encryption, and it is
-          that hash that we store on the blockchain. Source data cannot be
-          reconstructed from hash stored on Blockchain.
-        </p>
-        <h5 class="my-4">Certification process steps</h5>
-        <p>
-          First, we take the information to be certified (source data) and
-          through a procedure called SHA 256, we encrypt that information and
-          obtain a hash (one-way alphanumeric code) as a result.
-        </p>
+        <p><?php echo $translate->__tr('how-is-certificate-content1');?></p>
+        <h5 class="my-4"><?php echo $translate->__tr('how-is-certificate-content2');?></h5>
+        <p><?php echo $translate->__tr('how-is-certificate-content3');?></p>
       </div>
 	  <div class="col-lg-11 offset-lg-1 cube-blockchain text-center my-2">
           <img class="img-fluid w-75"src="../../imgs/GRAFICOS-04.png" alt="cuadro" />
         </div>
       <div class="col-lg-10 offset-lg-1 my-5 WWD-content">
-        <p>
-            Every time we want to validate that a certificate or certain information has not been altered, we carry out the following steps:
-        </p>
+        <p><?php echo $translate->__tr('how-is-certificate-content4');?></p>
         <div class="list-numeration">
             <ol>
-                <li>We recalculate the hash of the source information, using the SHA-256 function.</li>
-                <li> If the obtained hash matches the hash stored on the blockchain, then the information has not been altered, and the certificate is valid.</li>
-                <li> If the obtained hash does not match the hash stored on the blockchain, then the source information has been altered
-                    and the certificate is invalid.</li>
+                <li><?php echo $translate->__tr('how-is-certificate-list1');?></li>
+                <li><?php echo $translate->__tr('how-is-certificate-list2');?></li>
+                <li><?php echo $translate->__tr('how-is-certificate-list3');?></li>
             </ol>
-            <p>The source information is never published on the Blockchain and is only stored on the organization's servers. Only the
-                cryptographic function of that information is stored on the blockchain.</p>
+            <p><?php echo $translate->__tr('how-is-certificate-content5');?></p>
         </div>
       </div>
       <div class="col-lg-11 offset-lg-1 WWD-content">
-          <h5 class="my-4">Immutable certificates</h5>
-          <p>Blockchain is an immutable and distributed database, where each block of information is related to the previous one. When a
-            certificate is issued, your data is compressed into a hash and registered on the blockchain. This generates a "receipt" that can
-            always be verified at a later date. Our verification service validates the issuer's signature and the certificate data; It also ensures
-            that the status of the certificate has not expired or has been revoked.</p>
-            <p>The friendly version of the certificate displayed online can change visually, depending on the device that displays it. For example, it may appear one way in a mobile app and slightly differently in a web browser. Although this screen can be optimized for
-                different circumstances, the data within the certificate can never be changed.</p>
+          <h5 class="my-4"><?php echo $translate->__tr('how-is-certificate-content6');?></h5>
+          <p><?php echo $translate->__tr('how-is-certificate-content7');?></p>
+          <p><?php echo $translate->__tr('how-is-certificate-content8');?></p>
       </div>
       <div class="col-lg-11 offset-lg-1 WWD-content">
-          <h5 class="my-4">Can issued certificates be changed?</h5>
-          <p>The certificates are immutable and once the information is registered, it cannot be altered. However, through El Grey ID you
-            can revoke the certificates or define their validity time. The issuer can revoke certificates that have errors or simply omit a
-            recipient.</p>
+          <h5 class="my-4"><?php echo $translate->__tr('how-is-certificate-content9');?></h5>
+          <p><?php echo $translate->__tr('how-is-certificate-content10');?></p>
       </div>
     </div>
   </div>

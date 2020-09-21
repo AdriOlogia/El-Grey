@@ -195,10 +195,6 @@ section {
     padding-left: 0 !important;
   }
   
-  
-  .idiomas a:last-child{
-    font-weight: bolder;
-  }
   .dropdown-menu{
     border: white;
   }
@@ -866,9 +862,7 @@ section {
   }
 
   /*section 1 */
-  .transformacion-digital{
-    padding-top: 100px;
-  }
+  
   .transformacion-digital-items2 p{
     padding-left: 20px;
   }
