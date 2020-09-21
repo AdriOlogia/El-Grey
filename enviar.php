@@ -57,7 +57,7 @@ $mail->SMTPAuth = true;
 $mail->Username = 'aabreu@ombutech.net';
 
 //Password to use for SMTP authentication
-$mail->Password = '96033527a';
+$mail->Password = '';
 
 //Set who the message is to be sent from --> CORREO DEL GREY
 $mail->setFrom('aabreu@ombutech.net', $usuarioname);
