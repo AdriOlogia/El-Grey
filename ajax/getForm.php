@@ -6,26 +6,26 @@
 */
 require_once(DIR_includes."class.checkinputs.inc.php");
 require_once(DIR_model."class.mensajes.inc.php");
+require_once(DIR_vendor.'autoload.php');
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+
+
 $this_file = substr(__FILE__,strlen(DIR_BASE))." ";
 
 $post = CleanArray($_POST);
 $msgerr = array();
 $data = [];
 
-$data['companyName'] = titleCase(mb_substr($post['companyName'],0,64));
-$data['industry'] = titleCase(mb_substr($post['industry'],0,64));
-$data['country'] = FormatStrUTF8(mb_substr($post['country'],0,64),2);
-$data['contactName'] = titleCase(mb_substr($post['contactName'],0,64));
-$data['titleName'] = mb_substr($post['titleName'],0,64);
-$data['telNumber'] = mb_substr($post['telNumber'],0,20);
+$data['inputname'] = titleCase(mb_substr($post['nombre'],0,64));
+$data['inputsurname'] = titleCase(mb_substr($post['apellido'],0,64));
 $data['email'] = mb_substr($post['email'],0,120);
 
 
-cCheckInput::NomApe($data['contactName'], 'contactName', 'Contact name');
+cCheckInput::NomApe($data['inputname'], 'inputname', 'Contact name');
+cCheckInput::NomApe($data['inputsurname'], 'inputsurname', 'Contact name');
 cCheckInput::Email($data['email'], 'email', 'Email');
-if (!empty($data['telNumber'])) {
-	cCheckInput::Tel($data['telNumber'], 'telNumber', 'Phone');
-}
 
 $msgerr = array_merge($msgerr, cCheckInput::$msgerr);
 
@@ -34,61 +34,75 @@ if (CanUseArray($msgerr)) {
 	return;
 }
 
-$mensaje = new cMensaje();
+$body = " El Nombre del Usuario es: ".$data['inputname']." ".$data['inputsurname']." Su correo es: " . $data['email'];
 
-$mensaje_id = $mensaje->Set(array(
-	'data'=>json_encode($data, JSON_HACELO_BONITO_CON_ARRAY)
-));
+//Create a new PHPMailer instance
+$mail = new PHPMailer;
 
-$email_recipient = '';
+//Tell PHPMailer to use SMTP
+$mail->isSMTP();
 
+//Enable SMTP debugging
+// SMTP::DEBUG_OFF = off (for production use)
+// SMTP::DEBUG_CLIENT = client messages
+// SMTP::DEBUG_SERVER = client and server messages
+$mail->SMTPDebug = SMTP::DEBUG_OFF;
 
-require_once(DIR_model.DS."infobip-email".DS."class.infobip_email.php");
+$mail->SMTPOptions = array(
+	'ssl' => array(
+	'verify_peer' => false,
+	'verify_peer_name' => false,
+	'allow_self_signed' => true
+)
+);
+//Set the hostname of the mail server
+$mail->Host = gethostbyname('smtp.gmail.com');
+// use
+// $mail->Host = gethostbyname('smtp.gmail.com');
+// if your network does not support SMTP over IPv6
 
-$ibmail = new cInfobipMail();
-$ibmail->debug_level = 1;
+//Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
+$mail->Port = 587;
 
-$ibmail->APIUrl = '';
-$ibmail->APIKey = '';
-$ibmail->SenderDomain = '';
+//Set the encryption mechanism to use - STARTTLS or SMTPS
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
-$plantilla = DIR_plantillas."emails".DS."formulario_contacto.html";
+//Whether to use SMTP authentication
+$mail->SMTPAuth = true;
 
-if (!ExisteArchivo($plantilla)) {
-	EmitJSON("No se pudo enviar el Mensaje.<br />El sistema no está bien configurado.");
-	cLogging::Write($this_file." No se pudo enviar correo de resumen del formulario a <".$email_recipient.">.",LGEV_WARN);
-	return;
-}
-$html = file_get_contents($plantilla);
+//Username to use for SMTP authentication - use full email address for gmail
+$mail->Username = 'aabreu@ombutech.net';
 
-$ibmail->HTMLBody = str_replace('[fechahoratxt]', cFechas::SQLDate2Str(cFechas::Ahora()), $html);
-$ibmail->HTMLBody = str_replace('[fechahora]', cFechas::SQLDate2Str(cFechas::Ahora()), $ibmail->HTMLBody);
-$ibmail->HTMLBody = str_replace('[appname]', '', $ibmail->HTMLBody);
-$ibmail->HTMLBody = str_replace('[appdescription]', '', $ibmail->HTMLBody);
+//Password to use for SMTP authentication
+$mail->Password = '96033527a';
 
-$ibmail->HTMLBody = str_replace('[companyName]', $data['companyName'], $ibmail->HTMLBody);
-$ibmail->HTMLBody = str_replace('[industry]', $data['industry'], $ibmail->HTMLBody);
-$ibmail->HTMLBody = str_replace('[country]', $data['country'], $ibmail->HTMLBody);
-$ibmail->HTMLBody = str_replace('[contactName]', $data['contactName'], $ibmail->HTMLBody);
-$ibmail->HTMLBody = str_replace('[titleName]', $data['titleName'], $ibmail->HTMLBody);
-$ibmail->HTMLBody = str_replace('[telNumber]', $data['telNumber'], $ibmail->HTMLBody);
-$ibmail->HTMLBody = str_replace('[email]', $data['email'], $ibmail->HTMLBody);
+//Set who the message is to be sent from --> CORREO DEL GREY
+$mail->setFrom('aabreu@ombutech.net', 'Desde EL GREY');
 
-$ibmail->AddAddress($email_recipient);
-$ibmail->AddFrom('hi@'.$ibmail->SenderDomain, APP_NAME);
-$ibmail->AddReplyTo($data['email']);
-$ibmail->Subject =  APP_NAME.' :: Contacto.';
+//Set who the message is to be sent to --> CORREO DEL GREY
+$mail->addAddress('aabreu@ombutech.net', 'Desde EL GREY'); 
 
-$result = $ibmail->Send();
+//Set the subject line
+$mail->Subject = <<<EOT
+A user {$data['inputname']} {$data['inputsurname']} send you a message to suscribe.
+EOT;
+
+//Read an HTML message body from an external file, convert referenced images to embedded,
+//convert HTML into a basic plain-text alternative body
+
+$mail->isHTML(false);
+$mail->Body = $body;
+
+//send the message, check for errors
+$result = $mail->send();
 
 if (!$result) {
 	EmitJSON("No se pudo enviar el Mensaje.");
-	cLogging::Write($this_file." No se pudo enviar correo de resumen del formulario a <".$email_recipient.">.",LGEV_WARN);
+	cLogging::Write($this_file." No se pudo enviar correo de resumen del formulario a <mail de el grey>.",LGEV_WARN);
 	return;
 }
-cLogging::Write($this_file." Se envió correo a ".$email_recipient.".",LGEV_WARN);
+cLogging::Write($this_file." Se envió correo a mail de el grey.",LGEV_WARN);
 
 ResponseOk();
 
-if ($mensaje_id) { $mensaje->UpdateMsg(array('enviado'=>1),$mensaje_id); }
 ?>

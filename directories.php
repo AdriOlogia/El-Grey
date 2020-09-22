@@ -16,6 +16,7 @@
 	define("CONTROLLER_DIR","controllers".DS);
 	define("CONFIG_DIR","config".DS);
 	define("INCLUDES_DIR","includes".DS);
+	define("VENDOR_DIR","vendor".DS);
 
 	define("VIEWS_DIR","views".DS);
 	define("AJAX_DIR","ajax".DS);
@@ -37,6 +38,7 @@
 	define("DIR_controller",DIR_system.CONTROLLER_DIR);
 	define("DIR_config",DIR_system.CONFIG_DIR);
 	define("DIR_includes",DIR_system.INCLUDES_DIR);
+	define("DIR_vendor",DIR_BASE.VENDOR_DIR);
 
 	define("DIR_views",DIR_BASE.VIEWS_DIR);
 	define("DIR_common",DIR_views.'common'.DS);
