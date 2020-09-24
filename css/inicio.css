@@ -231,6 +231,7 @@ section {
     padding: 20px;
     background-repeat: no-repeat;
     background-position-y: center;
+    background-size: 30px;
   }
 
   /* .navbar-toggler img{
@@ -291,7 +292,9 @@ section {
 
   .trascendiendo-imagen span{
     font-size: 8px;
-    font-family: var(--font--helvetica-regular);
+    font-family: var(--font--helvetica-regular);flex-direction: column!important;
+    display: flex!important;
+    
   }
 
   .trascendiendo-parrafo p{
@@ -310,7 +313,8 @@ section {
   .trascendiendo-imagen{
     top: -100px;
   }
-
+  
+  
   @media screen and (max-width: 768px){
     .trascendiendo-titulo h3{
       margin-left: 0;
@@ -358,15 +362,15 @@ section {
   }
 
   .media img{
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
   }
   .beneficios{
     background: var(--background--salmon);
   }
 
   .beneficios .media img{
-    opacity: 0.5;
+    opacity: 0.7;
   }
   
   .btn {
@@ -681,9 +685,7 @@ section {
     font-family: var(--font-opensans-light);
 	color: #424242;
   }
-  .media img{
-    height: 65px;
-  }
+  
   .media-flecha-list .media,
   .media-flecha-list .media h5{
     color: #402ea3;
@@ -872,7 +874,8 @@ section {
   
   .trascendiendo-imagen{
     top: 0px;
-	margin-bottom: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
   }
 
   /* section 2 */
@@ -882,9 +885,14 @@ section {
     background: #f6bd00;
     position: absolute;
     z-index: -1;
-    right: 66px;
+    right: 100px;
     top: -17px;
   }
+  .trascendiendo-imagen span{
+    text-align: left;
+    padding-left: 200px;
+  }
+  
   
 
   /* section 3 */
@@ -934,9 +942,7 @@ section {
     flex-direction: column!important;
   }
 
-	.transformacion-digital-items2 {
-		top: 0;
-	}
+	
   
 }
 
@@ -961,7 +967,50 @@ section {
     position: absolute;
     z-index: -1;
     right: 15px;
-}
+  }
+  .beneficios .col-lg-4 img{
+    margin-left: 30px;
+  }
+
+  .colaboracion-item-1::after {
+    padding: 235px 80px;
+  }
+
+  .formulario{
+    min-height: 80vh;
+  }
+
+  .margin-top{
+    min-height: 10vh;
+    margin-top: 50px;
+  }
+
+  .tittle-blockchain{
+    margin-top: 10px !important;
+    margin-bottom: 30px !important;
+  }
+  .spacio{
+    margin-bottom: 100px;
+  }
+
+  .navbar-collapse{
+    margin-top: 20px;
+  }
+  .certific-item-1 img {
+    width: 300px;
+  }
+  .como-certific{
+    background-position-y: 380px;
+    background-size: 400px;
+  }
+
+  .trascendiendo-imagen span{
+    text-align: left;
+    padding-left: 30px;
+  }
+
+  
+
    
 }
 
@@ -978,7 +1027,6 @@ section {
   .list-style-benefits img {
     width: 300px;
   }
-
 
 }
 
@@ -1025,6 +1073,9 @@ section {
     left: -80px;
     top: -45px;
     background-repeat: repeat;
+    }
+    .trascendiendo-imagen{
+      top: 0;
     }
 
 }
