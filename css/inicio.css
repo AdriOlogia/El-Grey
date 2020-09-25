@@ -969,7 +969,7 @@ section {
     right: 15px;
   }
   .beneficios .col-lg-4 img{
-    margin-left: 30px;
+    margin-left: 45px;
   }
 
   .colaboracion-item-1::after {
@@ -1008,6 +1008,33 @@ section {
     text-align: left;
     padding-left: 30px;
   }
+
+  /* carrusel */
+  /* .slick-prev:before {
+    content: '';
+    background: url(../imgs/arrowp1.png);
+    color: black;
+    padding: 20px 80px;
+    background-repeat: no-repeat;
+    background-size: 35px;
+    background-position: center;
+  } */
+  .slick-prev {
+    left: -20px;
+  }
+
+  .slick-next:before {
+    content: '';
+    background: url(../imgs/arrowp.png);
+    color: black;
+    padding: 20px 80px;
+    background-repeat: no-repeat;
+    background-size: 35px;
+    background-position: center;
+  }
+  .slick-next {
+    right: 40px;
+}
 
   
 
