@@ -68,10 +68,6 @@ FONTS
   src: url("../fonts/OpenSans-SemiBold.ttf");
 }
 
-
-
-
-
 * {
   font-family: var(--font-opensans);
 }
@@ -83,8 +79,6 @@ html {
 .main-site-wrapper {
   overflow: hidden;
 }
-
-
 
 /**********
   BASE
@@ -221,14 +215,14 @@ section {
   .navbar-toggler{
     order: -1;
     background: url("../imgs/menu.svg");
-    padding: 20px;
+    padding: 16px;
     background-repeat: no-repeat;
     background-position-y: center;
   }
   .navbar-toggler.cambio{
     order: -1;
     background: url("../imgs/cruz-menu.svg");
-    padding: 20px;
+    padding: 15px;
     background-repeat: no-repeat;
     background-position-y: center;
     background-size: 30px;
@@ -265,7 +259,7 @@ section {
     content: 'PH LAURA FERRO';
     position: absolute;
     font-size: 8px;
-    bottom: 10px;
+    bottom: 90px;
     right: 40px;
     color: white;
 	letter-spacing: 2px;
@@ -292,9 +286,11 @@ section {
 
   .trascendiendo-imagen span{
     font-size: 8px;
-    font-family: var(--font--helvetica-regular);flex-direction: column!important;
+    font-family: var(--font--helvetica-regular);
+	flex-direction: column!important;
     display: flex!important;
-    
+	letter-spacing: 2px;
+	margin-top: 5px;
   }
 
   .trascendiendo-parrafo p{
@@ -469,8 +465,8 @@ section {
 		position: relative;
 		white-space: pre;
 		background-color: white;
-		color: #595959;
-		font-family: var(--font-opensans-light);
+		color: #282828;
+		font-family: var(--font--helvetica-roman);
 	}
 
 
@@ -614,15 +610,14 @@ section {
 /* ***************************************
               INICIO DE PURPOSE
     **************************************  */
-    .purpose-img::after{
-      content: 'AGUSTINA BOTTONI';
+   
+	
+	.purpose-img span{
       font-family: var(--font--helvetica-roman);
 	  color: #282828;
 	  letter-spacing: 2px;
-      position: absolute;
-      bottom: -35px;
       font-size: 8px;
-      right: 10px;
+      margin-top: 5px;
     }
 	
 	.purpose-text p {
@@ -630,8 +625,8 @@ section {
 	}
 	
     @media screen and (max-width: 576px){
-      .purpose-img::after{
-        content: '';
+      .purpose-img span{
+        display: none;
       }
       .purpose-img::before{
         content: 'AGUSTINA BOTTONI';
@@ -833,7 +828,8 @@ section {
 
   
   /* carrusel configuracion */
-  .pista-carrusel{
+  .pista-carrusel,
+  .pista-carrusel-news {
     display:none;
     visibility: hidden;
   } 
@@ -853,7 +849,8 @@ section {
   }
 
   /* carrusel */
-  .pista-carrusel{
+  .pista-carrusel,
+  .pista-carrusel-news{
     display: block;
     visibility: visible;
     text-align: center;
@@ -864,10 +861,7 @@ section {
   }
 
   /*section 1 */
-  
-  .transformacion-digital-items2 p{
-    padding-left: 20px;
-  }
+
   .transformacion-digital-items2 p{
     padding-left: 20px;
   }
@@ -877,6 +871,14 @@ section {
   margin-bottom: 3rem;
   text-align: center;
   }
+
+  .transformacion-digital-items2 {
+    top: -140px;
+  }
+  .transformacion-digital::after{
+    bottom: 35px;
+  }
+  
 
   /* section 2 */
   .trascendiendo-imagen::before {
@@ -898,12 +900,13 @@ section {
   /* section 3 */
   
   .como-certific {
-    background-position-y: 305px;
+    background-position-y: 170px;
 }
-  .como-certific-items{
-    margin-top: 200px;
-  }
   
+  .certific-item-1{
+    order: 1;
+    margin-top: 250px;
+  }
   
   
   /* section 4 */
@@ -914,7 +917,7 @@ section {
   /* section 5 */
 
   .colaboracion-item-2{
-    margin-top: 50px;
+    margin-top: 80px;
   }
   .colaboracion-item-1::after{
     padding: 190px 80px;
@@ -926,6 +929,9 @@ section {
   }
   .margin-top{
     margin-top: 80px;
+  }
+  .tittle-form{
+    margin-bottom: 50px;
   }
 
 
@@ -948,6 +954,10 @@ section {
 
 @media screen and (max-width: 476px){
 
+  .transformacion-digital{
+    margin-top: -30px;
+  }
+
   .trascendiendo-parrafo{
     order: 1;
   }
@@ -969,7 +979,13 @@ section {
     right: 15px;
   }
   .beneficios .col-lg-4 img{
-    margin-left: 45px;
+    margin-left: 15%;
+	width: 45px;
+	height: 45px;
+  }
+  
+  .beneficios .media-body {
+    text-align: left;
   }
 
   .colaboracion-item-1::after {
@@ -1000,7 +1016,7 @@ section {
     width: 300px;
   }
   .como-certific{
-    background-position-y: 380px;
+    background-position-y: 350px;
     background-size: 400px;
   }
 
@@ -1027,13 +1043,18 @@ section {
     content: '';
     background: url(../imgs/arrowp.png);
     color: black;
-    padding: 20px 80px;
+    padding: 20px 65px;
     background-repeat: no-repeat;
     background-size: 35px;
     background-position: center;
   }
   .slick-next {
     right: 40px;
+  }
+
+.pista-carrusel .slick-next {
+  right: 60px;
+  margin-top: 25px;
 }
 
   
@@ -1083,12 +1104,12 @@ section {
 
   .trascendiendo-imagen::before {
     content: '';
-    padding: 175px 130px;
+    padding: 220px 130px;
     background: #f6bd00;
     position: absolute;
     z-index: -1;
-    right: 170px;
-    top: -25px;
+    right: 128px;
+    top: -18px;
   }
 
   .colaboracion-item-1::after {
@@ -1103,6 +1124,10 @@ section {
     }
     .trascendiendo-imagen{
       top: 0;
+      text-align: center;
     }
-
+    .certific-item-1{
+      order: 1;
+      padding-top: 130px;
+    }
 }

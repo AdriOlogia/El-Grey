@@ -24,7 +24,7 @@ class Translator {
     }
 
     public function __tr($str)
-    {  
+    {
         if (!array_key_exists($this->language, $this->lang))
         {
             if (!file_exists(DIR_includes.$this->language.'.txt'))
@@ -33,7 +33,7 @@ class Translator {
             $strings = array_map(array($this,'splitStrings'),file(DIR_includes.$this->language.'.txt'));
             foreach ($strings as $k => $v)
             {
-                $this->lang[$this->language][$v[0]] = $v[1];
+                $this->lang[$this->language][$v[0]] = $v[1];				
             }
             
             return $this->findString($str);

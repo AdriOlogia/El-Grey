@@ -5,6 +5,7 @@
 	Author: DriverOp.
 */
 require_once(DIR_includes."class.checkinputs.inc.php");
+require_once(DIR_config."access.config.inc.php");
 require_once(DIR_model."class.mensajes.inc.php");
 require_once(DIR_vendor.'autoload.php');
 
@@ -71,20 +72,20 @@ $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 $mail->SMTPAuth = true;
 
 //Username to use for SMTP authentication - use full email address for gmail
-$mail->Username = 'aabreu@ombutech.net';
+$mail->Username = CONTACT_MAIL;
 
 //Password to use for SMTP authentication
-$mail->Password = '96033527a';
+$mail->Password = CONTACT_PASS;
 
 //Set who the message is to be sent from --> CORREO DEL GREY
-$mail->setFrom('aabreu@ombutech.net', 'Desde EL GREY');
+$mail->setFrom('info@elgreyid.com', 'Info El Grey ID');
 
 //Set who the message is to be sent to --> CORREO DEL GREY
-$mail->addAddress('aabreu@ombutech.net', 'Desde EL GREY'); 
+$mail->addAddress('info@elgreyid.com', 'Desde EL GREY'); 
 
 //Set the subject line
 $mail->Subject = <<<EOT
-A user {$data['inputname']} {$data['inputsurname']} send you a message to suscribe.
+CONTACT - A user {$data['inputname']} {$data['inputsurname']} send you a message to suscribe.
 EOT;
 
 //Read an HTML message body from an external file, convert referenced images to embedded,
