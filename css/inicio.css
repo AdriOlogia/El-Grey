@@ -255,11 +255,15 @@ section {
     min-height: 100vh;
   }
 
+  .transformacion-digital-items2{
+    margin-top: -85px;
+  }
+
   .transformacion-digital::after{
     content: 'PH LAURA FERRO';
     position: absolute;
     font-size: 8px;
-    bottom: 90px;
+    bottom: 8px;
     right: 40px;
     color: white;
 	letter-spacing: 2px;
@@ -456,8 +460,32 @@ section {
       transform: scaleY(1.05);
       padding-top: 5px; 
   }
+	
+	.artist-name1 span,
+	.artist-name2 span, 
+	.artist-name3 span, 
+	.artist-name4 span {
+		font-size: 10px;
+		text-transform: uppercase;
+		width: 50px;
+		background-color: white;
+		color: #282828;
+		font-family: var(--font--helvetica-roman);
+		position: absolute;
+		word-break: break-word;
+	}
+	
+	.artist-name1 span,
+	.artist-name2 span {
+		left: 9%;
+	}
+	
+	.artist-name3 span,
+	.artist-name4 span {
+		right: 8.5%;
+	}
 
-	.artist-name1::before, 
+	/*.artist-name1::before, 
 	.artist-name2::before, 
 	.artist-name3::before, 
 	.artist-name4::before {
@@ -490,16 +518,24 @@ section {
     left: 500px;
     top: 40px;
     z-index: 1;
-  }
+  }*/
 
   @media screen and (max-width: 576px){
-	.artist-name1::before, 
+	/*.artist-name1::before, 
 	.artist-name2::before, 
 	.artist-name3::before, 
 	.artist-name4::before{
 		position: inherit;
 	    white-space: initial;
-    }
+    }*/
+	
+	.artist-name1 span,
+	.artist-name2 span, 
+	.artist-name3 span, 
+	.artist-name4 span {
+		position: inherit;
+	    width: 100px;
+	}
   }
 
   
@@ -834,9 +870,7 @@ section {
     visibility: hidden;
   } 
 
-	.transformacion-digital-items2 {
-		top: -85px;
-	}
+	
 
   /* *************
       inicio del edia mediaQuery
@@ -865,6 +899,10 @@ section {
   .transformacion-digital-items2 p{
     padding-left: 20px;
   }
+
+  .transformacion-digital-items2{
+    margin-top: -150px;
+  }
   
   .trascendiendo-imagen{
     top: 0px;
@@ -872,11 +910,14 @@ section {
   text-align: center;
   }
 
-  .transformacion-digital-items2 {
-    top: -140px;
-  }
   .transformacion-digital::after{
-    bottom: 35px;
+    bottom: 50px;
+    content: 'PH LAURA FERRO';
+    position: absolute;
+    font-size: 8px;
+    right: 40px;
+    color: white;
+    letter-spacing: 2px;
   }
   
 
@@ -954,10 +995,9 @@ section {
 
 @media screen and (max-width: 476px){
 
-  .transformacion-digital{
-    margin-top: -30px;
+  .transformacion-digital-items2{
+    margin-top: -300px;
   }
-
   .trascendiendo-parrafo{
     order: 1;
   }
@@ -1062,6 +1102,27 @@ section {
    
 }
 
+@media (max-width: 420px){
+  
+  .transformacion-digital{
+    min-height: 90vh;
+  }
+
+  .transformacion-digital-items2{
+    margin-top: -250px;
+  }
+
+  .transformacion-digital::after {
+    bottom: 75px;
+    content: 'PH LAURA FERRO';
+    position: absolute;
+    font-size: 8px;
+    right: 40px;
+    color: white;
+    letter-spacing: 2px;
+  }
+}
+
 @media screen and (max-width: 380px){
    .trascendiendo-imagen::before {
     content: '';
@@ -1070,6 +1131,14 @@ section {
     position: absolute;
     z-index: -1;
     right: 15px;
+  }
+
+  .transformacion-digital-items2{
+    margin-top: -200px;
+  }
+
+  .transformacion-digital::after{
+    bottom: 80px;
   }
 
   .list-style-benefits img {
