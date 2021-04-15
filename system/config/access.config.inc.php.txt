@@ -1,9 +1,9 @@
 ﻿<?php
 // Datos de conexión con la base de datos.
 define('DBHOST', 'localhost'); // El host de la BD
-define('DBNAME', 'msudb'); // El nombre de la BD
+define('DBNAME', 'elgreydb'); // El nombre de la BD
 define('DBUSER', 'root'); // El user de la BD
-define('DBPASS', 'darkelucidation'); // La contraseña de la BD
+define('DBPASS', ''); // La contraseña de la BD
 define('DBPORT', '3306'); // El puerto de la DB
 
 ?>
