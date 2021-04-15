@@ -6,4 +6,6 @@ define('DBUSER', 'root'); // El user de la BD
 define('DBPASS', ''); // La contraseña de la BD
 define('DBPORT', '3306'); // El puerto de la DB
 
+define('CONTACT_MAIL', 'info@elgreyid.com');
+define('CONTACT_PASS','elgreyid2020');
 ?>
