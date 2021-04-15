@@ -408,7 +408,7 @@ section {
  /* *************
       SECTION V colaboracion
     *****************/
-  .colaboracion-item-1::after{
+ /* .colaboracion-item-1::after{
     content: '';
     padding: 300px 115px;
     background: #88a7a6;
@@ -418,10 +418,10 @@ section {
     top: -70px;
     background-repeat: repeat;
   }
-
+*/
   .colaboracion-item-1{
     background: white;
-    padding: 5%;
+    padding: 5% 5% 0 0;
   }
   .colaboracion-item-2{
     padding: 5%;
@@ -465,24 +465,19 @@ section {
 	.artist-name2 span, 
 	.artist-name3 span, 
 	.artist-name4 span {
-		font-size: 10px;
+		font-size: 9px;
 		text-transform: uppercase;
-		width: 50px;
 		background-color: white;
-		color: #282828;
-		font-family: var(--font--helvetica-roman);
-		position: absolute;
+		font-family: var(--font--helvetica-regular);
 		word-break: break-word;
+		letter-spacing: 1px;
+		color: gray;
+		display: block;
+		margin: 2px 0;
 	}
 	
-	.artist-name1 span,
-	.artist-name2 span {
-		left: 9%;
-	}
-	
-	.artist-name3 span,
-	.artist-name4 span {
-		right: 8.5%;
+	.black {
+		color: #000 !important;
 	}
 
 	/*.artist-name1::before, 
@@ -520,6 +515,11 @@ section {
     z-index: 1;
   }*/
 
+	@media screen and (max-width: 768px) {
+		.artist-name1 span, .artist-name2 span, .artist-name3 span, .artist-name4 span{
+			width: 9vw;
+		}
+	}
   @media screen and (max-width: 576px){
 	/*.artist-name1::before, 
 	.artist-name2::before, 
@@ -536,6 +536,8 @@ section {
 		position: inherit;
 	    width: 100px;
 	}
+	
+	
   }
 
   

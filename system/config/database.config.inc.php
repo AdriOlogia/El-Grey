@@ -6,5 +6,4 @@ require_once(DIR_config."access.config.inc.php");
 define("TBL_contenido","frontend_contenidos");
 define("TBL_backend_permisos","tabla_no_necesariamente_existente");
 define("TBL_mensajes","mensajes");
-
 ?>

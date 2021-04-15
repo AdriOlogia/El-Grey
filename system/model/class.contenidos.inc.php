@@ -269,12 +269,18 @@ class cContenido extends cModels {
 */
 	public function GetTitulo($withmain = true){
 		
+		$lang = 'eng';
+		if(isset($_COOKIE["language"]) && in_array(strtolower($_COOKIE["language"]), array('esp','eng'))){
+			$lang = strtolower($_COOKIE["language"]);
+		}
+		
 		$result = null;
 		if (!empty($this->metatitle)) {
 			$result = $this->metatitle;
 		} else {
 			if (!empty($this->nombre)) {
-				$result = $this->nombre;
+				$result = json_decode($this->nombre);
+				$result = $result->$lang;
 			}
 		}
 		if (!empty(MAINTITLE) and $withmain) {
